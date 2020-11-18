@@ -47,24 +47,23 @@
 									<span class="image main"><img src="../images/reto2/nmap.jpg" alt="" /></span>
 
 									<p>
-										 Con nmap usando la opcion --script http-enum nos reporta que hay una carpeta  <b>img</b> hasta ahi bien abrimos el navegador y con la ip victima  la cargamos , 
-										 ami me gusta mirar el codigo fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>.
-										 La desciframos con un echo como vemos en la imagen y sale la palabra salvoconducto , los salvoconductos son utilizados para descifrar imagenes con<p><a href=" https://es.wikipedia.org/wiki/Esteganograf%C3%ADasteganografia">Esteganografía </a></p>
-										 Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen ,bueno me la descargo a mi maquina  y ahora tenemos una imagen y un salvoconducto hummm!!.
-
+										 Con nmap usando la opción --script http-enum nos reporta que hay una carpeta  <b>img</b> hasta ahí bien abrimos el navegador y con la ip victima  la cargamos , 
+                                         ami me gusta mirar el código fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>.
+                                         La desciframos con un echo como vemos en la imagen y sale la palabra salvoconducto , los salvoconductos son utilizados para descifrar imagenes con<a href=" https://es.wikipedia.org/wiki/Esteganograf%C3%ADasteganografia">Esteganografía </a>.
+                                         Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen ,bueno me la descargo a mi maquina  y ahora tenemos una imagen y un salvoconducto hummm!!.
+                                        Usaremos Steghide para comprobar si hay algo oculto  nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
 									</p>
 									<span class="image main"><img src="../images/reto2/base64.jpg" alt="" /></span>
 									<h2>Acceso a la maquina por SSh</h2>
-									<!-- <span class="image main"><img src="../images/reto1/ftp.jpg" alt="" /></span> -->
-									<p>En nuestra terminal usaremos las credenciales del archivo de texto.</p>
-
-									<hr class="major" />
-
-									<h2>Obteniendo las Flags </h2>
-									
-									<p>Bueno esta casi ya esta  usamos la funcion get y descargamos los ficheros en nuestra terminal.</p>
-									<!-- <span class="image main"><img src="../images/reto1/flags.jpg" alt="" /></span> -->
-									<p>Luego le aplicamos un cat a los archivos  y ya tenemos las flags user y root esta ultima la usaremos en el reto II.</p>
+	
+									<p>En nuestra terminal usaremos las credenciales del archivo de texto ssh 10.10.10.XX
+                                        usuario :Pepethefrog
+                                        pass:   4d3l4nt3p3p3
+                                        Buenos pues ya estamos dentro de la maquina victima y vemos que estamos dentro  de la carpeta pepethefrog
+                                        listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt  , 
+                                        listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bashnone y zas en toda la boca, la siguiente Flag root.txt.
+									</p>
+									<span class="image main"><img src="../images/reto2/flags.jpg" alt="" /></span>
 								
 									<hr class="major" />
 
