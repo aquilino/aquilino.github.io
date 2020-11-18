@@ -47,14 +47,16 @@
 									<span class="image main"><img src="../images/reto2/nmap.jpg" alt="" /></span>
 
 									<p>
-										 El nmap usando la opcion --script http-enum nos reporta que hay una carpeta  <b>img</b> hasta ahi bien abrimos el navegador y con la ip victima  la cargamos , 
-										 ami me gusta mirar el codigo fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>
-										accedemos en ella con en el navegador  y nos aparece una imagen ,bueno me la descargo a mi maquina 
+										 Con nmap usando la opcion --script http-enum nos reporta que hay una carpeta  <b>img</b> hasta ahi bien abrimos el navegador y con la ip victima  la cargamos , 
+										 ami me gusta mirar el codigo fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>.
+										 La desciframos con un echo como vemos en la imagen y sale la palabra salvoconducto , los salvoconductos son utilizados para descifrar imagenes con<p><a href=" https://es.wikipedia.org/wiki/Esteganograf%C3%ADasteganografia">Esteganografía </a></p>
+										 Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen ,bueno me la descargo a mi maquina  y ahora tenemos una imagen y un salvoconducto hummm!!.
+
 									</p>
-									
-									<h2>Acceso a la maquina por ftp</h2>
+									<span class="image main"><img src="../images/reto2/base64.jpg" alt="" /></span>
+									<h2>Acceso a la maquina por SSh</h2>
 									<!-- <span class="image main"><img src="../images/reto1/ftp.jpg" alt="" /></span> -->
-									<p>accedemos por el puerto 21 con el user anonymous y el pass en blanco y ya estamos dentro  con ls listamos lo que hay y aparecen las flags.</p>
+									<p>En nuestra terminal usaremos las credenciales del archivo de texto.</p>
 
 									<hr class="major" />
 
