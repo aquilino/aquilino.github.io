@@ -49,8 +49,8 @@
 									<p>
 									Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,
 									ami me gusta mirar el código fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>. 
-									La desciframos con un echo como vemos en la imagen y sale la palabra salvoconducto , 
-									los salvoconductos son utilizados para descifrar imagenes con<a href=" https://es.wikipedia.org/wiki/Esteganograf%C3%ADasteganografia">Esteganografía </a>.
+									La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto , 
+									los salvoconductos son utilizados para descifrar imagenes con <a href=" https://es.wikipedia.org/wiki/Esteganograf%C3%ADasteganografia">Esteganografía </a>.
 									Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen ,bueno me la descargo a mi maquina  y ahora tenemos una imagen y un salvoconducto hummm!!.
 									Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
 									</p>
