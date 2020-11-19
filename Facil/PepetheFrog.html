@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" {text-align: center}>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -51,7 +51,7 @@
 									ami me gusta mirar el código fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>. 
 									La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.
 									Los salvoconductos son utilizados para descifrar imagenes con<a href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a>
-									
+
 									Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen.
 									La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!.
 									Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
@@ -61,7 +61,8 @@
 	
 									<p>En nuestra terminal usaremos las credenciales del archivo de texto ssh 10.10.10.XX</p>
 									<p> usuario: Pepethefrog
-										 pass:   4d3l4nt3p3p3</p>
+										 pass:   4d3l4nt3p3p3
+									</p>
 								<p> Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog
 									listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
 									listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash_none 
