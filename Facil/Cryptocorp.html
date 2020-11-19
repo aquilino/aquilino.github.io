@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cryptocorp reto IV</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+						<!-- Header -->
+								<header id="header">
+									<a href="../index.html" class="logo"><strong>h1dr0</strong></a>
+									<ul class="icons">
+										<li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>CRYPTOCORP</h1>
+									</header>
+
+									<span class="image main"><img src="../images/reto4/reto4.jpg" alt="" /></span>
+
+									<h2> Enumeracion de servicios y puertos  </h2>
+
+									<p>Comenzaremos colocando la ip en el navegador  .</p>
+
+									<span class="image main"><img src="../images/reto3/fakenews.jpg" alt="" /></span>
+
+									<p>
+										Nos aparece el logo mu chulo de la pagina fake news, en el codigo fuente no se aprecia nada de interes.
+										Pasamos a enumerar los puertos con nmap.
+									</p>
+									<span class="image main"><img src="../images/reto3/nmap.jpg" alt="" /></span>
+	
+									<p>Como vemos en la imagen hemos utilizado  -sC con nmap para que utilice todos los script que tiene  y -sV  para saber la version. Nos inidca que en robot.txt hay una carpeta disallowed "oculta" /drupal-7.57/, aqui colocamos la url/drupal-7.57/ y nos aparece una pantalla de login.</p>
+									<p>En este punto me estallo la cabeza busque de todo con dirsearch ,droopscan esta muy bien por que es para este <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> pero nada de interes, solo para saber como funciona drupal. Busco un exploit o vulneravilidad y encuentro drupalggedon2 en <a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a> es un exploit que va muy bien para ejecutar comandos o subir una remote shell. </p>
+									<span class="image main"><img src="../images/reto3/drupal.jpg" alt="" /></span>
+									<p>Usando drupalggedon2 vemos que ya estamos dentro de la maquina  pero la shell esta limitada y subiremos una shell en php que funciona perfecto. </p>
+									
+									<h3>shell.php</h3>
+									<span class="image main"><img src="../images/reto3/shell.jpg" alt="" /></span>
+									<p>montamos un server con python3  y en la web shell con wget subimos la shell</p>
+									<span class="image main"><img src="../images/reto3/upshell.jpg" alt="" /></span>	
+									<p>Ahora en el navegador colocamos la url/drupal-7.57/exploit.php y en nuestra terminal colocamos un nc a la escucha.Como vemos en la captura ya estamos en una reverse_shell la acomodaremos con python3 para funcionar y listo</p>
+									<span class="image main"><img src="../images/reto3/nc.jpg" alt="" /></span>
+									<!-- Preformatted Code -->
+									<h3>tty</h3>
+									<pre><code>
+										python3 -c 'import pty;pty.spawn("/bin/bash")'
+									</code></pre>
+									<p>Ya tiene otra cara esta shell, somos usuario www-data hacemos un ls y vemos que estamos dentro de la carpeta drupal voy una carpeta a tras y vemos que esta la primera flag, luego hago ls -la para ver los archivos ocultos y vemos la segunda. </p>
+									<span class="image main"><img src="../images/reto3/Fin.jpg" alt="" /></span>
+									<hr class="major" />
+								<p>Herramientas utilizadas para este reto:
+									<p><a href="https://nmap.org/">Nmap</a></p>
+									<p><a href="https://github.com/droope/droopescan">DroopScan</a></p>
+									<P><a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a></p>
+								 
+								</p>
+									<h2>Foro CHE y grupo de telegram</h2>
+									<p><a href="http://ctf.comunidadhackingetico.es/home">Comunidad de Hacking Ético</a></p>
+									<span class="icon main"><img src="../images/logo.jpg" alt="" /></span>
+									<p>Podeis pedir ayuda de cualquier reto a la comunidad. <a href="https://t.me/HackingEticoEs" class="bbcode_url">Grupo de Telegram</a></p>
+
+
+								</section>
+
+						</div>
+					</div>
+					<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">Pagina De Inicio</a></li>
+
+										<!--<li><a href="elements.html">Elements</a></li>-->
+
+										<header class="major">
+											<h2>Retos CTF</h2>
+										</header>
+										<li>
+											<span class="opener">Facil</span>
+											<ul>
+												<li><a href="../Facil/oclat.html">Reto I</a></li>
+												<li><a href="../Facil/PepetheFrog.html">Reto II</a></li>
+												<li><a href="../Facil/Fakenews.html">Reto III</a></li>
+												<li><a href="../Facil/#">Reto IV</a></li>
+												<li><a href="../Facil/#">Reto V</a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener">Medio</span>
+											<ul>
+												<li><a href="Medio/#">Reto VI</a></li>
+												<li><a href="Medio/#">Reto VII</a></li>
+											</ul>
+										</li>
+
+										<li>
+											<span class="opener">Dificil</span>
+											<ul>
+												<li><a href="Dificil/#">Reto VIII</a></li>
+												<li><a href="Dificil/#">Reto IX</a></li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+
+							</div>
+
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
