@@ -36,7 +36,7 @@
 				</header>
 
 				<!-- Content -->
-				<section {text-align: center}>
+				<section>
 					<header class="main">
 						<h1>Pepe the Frog</h1>
 					</header>
@@ -46,20 +46,19 @@
 
 					<h2> Enumeracion de servicios y puertos </h2>
 
-					<p>Empezaremos con NMAP y creo que la usaremos mucho :nmap -p- --open T5 -n url vemos el puerto 80
+					<p align="left">Empezaremos con NMAP y creo que la usaremos mucho :nmap -p- --open T5 -n url vemos el puerto 80
 						abierto y lo escaneamos un poco mas a fondo .</p>
 
 					<span class="image main"><img src="../images/reto2/nmap.jpg" alt="" /></span>
 					<hr class="major" />
-					<p> Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> 
-						hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,
-						a mi me gusta mirar el código fuente y observamos que hay un string en base64  ,
+					<p align="left"> Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> 
+						<br>hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,
+						<br>a mi me gusta mirar el código fuente y observamos que hay un string en base64  ,
 						<b>UzRsdjBDMG5EdUN0MCE=</b>.
-						La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.
-						Los salvoconductos son utilizados para descifrar imagenes con<a
-							href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a></p>
+						<br>La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.
+						<br>Los salvoconductos son utilizados para descifrar imagenes con<a href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a></p>
 
-					<p>Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen.
+						<p align="left">Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen.
 						La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!.
 						Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
 					</p>
@@ -74,13 +73,12 @@
 						<p> usuario: Pepethefrog pass:   4d3l4nt3p3p3</p>
 
 					</div>
-
-
 					<hr class="major" />
-					<p> Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog
-						listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
-						listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash_none
-						le hacemos un cat y zas en toda la boca, la siguiente Flag root.txt.
+
+					<p align="left"> Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog
+						<br>listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
+						<br>listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash_none
+						<br>le hacemos un cat y zas en toda la boca, la siguiente Flag root.txt.
 					</p>
 
 					<span class="image main"><img src="../images/reto2/flags.jpg" alt="" /></span>
