@@ -5,105 +5,114 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Pepe the Frog reto II</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Pepe the Frog reto II</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<body class="is-preload">
 
-						<!-- Header -->
-								<header id="header">
-									<a href="../index.html" class="logo"><strong>h1dr0</strong></a>
-									<ul class="icons">
-										<li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
-										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="../index.html" class="logo"><strong>h1dr0</strong></a>
+					<ul class="icons">
+						<li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span
+									class="label">Telegram</span></a></li>
+						<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
-									</ul>
-								</header>
+					</ul>
+				</header>
 
-							<!-- Content -->
-								<section {text-align: center}>
-									<header class="main">
-										<h1>Pepe the Frog</h1>
-									</header>
+				<!-- Content -->
+				<section {text-align: center}>
+					<header class="main">
+						<h1>Pepe the Frog</h1>
+					</header>
 
-									<span class="image main"><img src="../images/reto2/reto2.jpg" alt="" /></span>
-									<hr class="major" />
+					<span class="image main"><img src="../images/reto2/reto2.jpg" alt="" /></span>
+					<hr class="major" />
 
-									<h2> Enumeracion de servicios y puertos  </h2>
+					<h2> Enumeracion de servicios y puertos </h2>
 
-									<p>Empezaremos con  NMAP y creo que la usaremos mucho :nmap -p- --open T5 -n url vemos el puerto 80 abierto y lo escaneamos un poco mas a fondo .</p>
+					<p>Empezaremos con NMAP y creo que la usaremos mucho :nmap -p- --open T5 -n url vemos el puerto 80
+						abierto y lo escaneamos un poco mas a fondo .</p>
 
-									<span class="image main"><img src="../images/reto2/nmap.jpg" alt="" /></span>
-									<hr class="major" />
-									<p>	Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> 
-										hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,
-										a mi me gusta mirar el código fuente y observamos que hay un string en base64  ,
-										<b>UzRsdjBDMG5EdUN0MCE=</b>. La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.
-										Los salvoconductos son utilizados para descifrar imagenes con<a href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a></p>
+					<span class="image main"><img src="../images/reto2/nmap.jpg" alt="" /></span>
+					<hr class="major" />
+					<p> Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> 
+						hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,
+						a mi me gusta mirar el código fuente y observamos que hay un string en base64  ,
+						<b>UzRsdjBDMG5EdUN0MCE=</b>.
+						La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.
+						Los salvoconductos son utilizados para descifrar imagenes con<a
+							href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a></p>
 
-									<p>Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen. 
-										La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!. 
-									   Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.</p>
-									<hr class="major" />
-									<span class="image main"><img src="../images/reto2/base64.jpg" alt="" /></span>
-									<hr class="major" />
-									<h2>Acceso a la maquina por SSh</h2>
-	
-									<p>En nuestra terminal usaremos las credenciales del archivo de texto ssh 10.10.10.XX</p>
-									<h3>Credenciales</h3>
-								<div class="box">
-									<p>	usuario: Pepethefrog pass:   4d3l4nt3p3p3</p>
-									
-								</div>
+					<p>Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen.
+						La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!.
+						Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
+					</p>
+					<hr class="major" />
+					<span class="image main"><img src="../images/reto2/base64.jpg" alt="" /></span>
+					<hr class="major" />
+					<h2>Acceso a la maquina por SSh</h2>
 
-									
-									<hr class="major" />
-								<p> Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog
-									listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
-									listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash_none 
-									le hacemos un cat y zas en toda la boca, la siguiente Flag root.txt.
-								</p>
+					<p>En nuestra terminal usaremos las credenciales del archivo de texto ssh 10.10.10.XX</p>
+					<h3>Credenciales</h3>
+					<div class="box">
+						<p> usuario: Pepethefrog pass:   4d3l4nt3p3p3</p>
 
-									<span class="image main"><img src="../images/reto2/flags.jpg" alt="" /></span>
-								
-									<hr class="major" />
-								<p>Herramientas utilizadas para este reto:
-									<p><a href="https://nmap.org/"><strong>Nmap</strong></a></p>
-									<p><a href="http://steghide.sourceforge.net/"><strong>steghide</strong></a></p> 
-								</p>
-									<h2>Foro CHE y grupo de telegram</h2>
-									<p><a href="http://ctf.comunidadhackingetico.es/home">Comunidad de Hacking Ético</a></p>
-									<span class="icon main"><img src="../images/logo.jpg" alt="" /></span>
-									<p>Podeis pedir ayuda de cualquier reto a la comunidad. <a href="https://t.me/HackingEticoEs" class="bbcode_url">Grupo de Telegram</a></p>
-
-
-								</section>
-
-						</div>
 					</div>
 
-				</div>
+
+					<hr class="major" />
+					<p> Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog
+						listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
+						listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash_none
+						le hacemos un cat y zas en toda la boca, la siguiente Flag root.txt.
+					</p>
+
+					<span class="image main"><img src="../images/reto2/flags.jpg" alt="" /></span>
+
+					<hr class="major" />
+					<p>Herramientas utilizadas para este reto:
+						<p><a href="https://nmap.org/"><strong>Nmap</strong></a></p>
+						<p><a href="http://steghide.sourceforge.net/"><strong>steghide</strong></a></p>
+					</p>
+					<h2>Foro CHE y grupo de telegram</h2>
+					<p><a href="http://ctf.comunidadhackingetico.es/home">Comunidad de Hacking Ético</a></p>
+					<span class="icon main"><img src="../images/logo.jpg" alt="" /></span>
+					<p>Podeis pedir ayuda de cualquier reto a la comunidad. <a href="https://t.me/HackingEticoEs"
+							class="bbcode_url">Grupo de Telegram</a></p>
+
+
+				</section>
 
 			</div>
+		</div>
 
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
+	</div>
 
-	</body>
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+
+</body>
+
 </html>
