@@ -42,39 +42,25 @@
 
 									<h2> Enumeracion de servicios y puertos  </h2>
 
-									<p>Comenzaremos colocando la ip en el navegador  .</p>
+									<p>Comenzaremos colocando la ip en el navegador  y vemos una web voy mirando y en el apartado about veo algo raro uns letras en negrita .</p>
+									<span class="image main"><img src="../images/reto4/about.jpg" alt="" /></span>
 
-									<span class="image main"><img src="../images/reto3/fakenews.jpg" alt="" /></span>
-
-									<p>
-										Nos aparece el logo mu chulo de la pagina fake news, en el codigo fuente no se aprecia nada de interes.
-										Pasamos a enumerar los puertos con nmap.
+									<p align="center">
+									Etreus, evall al y aicnerefer al se ortauc .otneirbmah le y odiláp le onis ,omet euq sol ogral olep noc y sodatnemila neib serbmoh sotse nos on
+									<br>no son estos hombres bien alimentados y con pelo largo los que temo, sino el palido y el hambriento. cuatro es la referencia y la llave, suerte.
 									</p>
-									<span class="image main"><img src="../images/reto3/nmap.jpg" alt="" /></span>
+									<hr class="major" />
+									<p align="center">
+										Teve tshiv gsrxmryev ip hmvigxsvms zmkirivi hifivew zmwmxev
+										<br>Para poder continuar el directorio vigenere deberas visitar ///http://url/VIGENERE/
+									</p>
+									<hr class="major" />
+									<span class="image main"><img src="../images/reto4/nmap.jpg" alt="" /></span>
 	
-									<p>Como vemos en la imagen hemos utilizado  -sC con nmap para que utilice todos los script que tiene  y -sV  para saber la version. Nos inidca que en robot.txt hay una carpeta disallowed "oculta" /drupal-7.57/, aqui colocamos la url/drupal-7.57/ y nos aparece una pantalla de login.</p>
-									<p>En este punto me estallo la cabeza busque de todo con dirsearch ,droopscan esta muy bien por que es para este <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> pero nada de interes, solo para saber como funciona drupal. Busco un exploit o vulneravilidad y encuentro drupalggedon2 en <a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a> es un exploit que va muy bien para ejecutar comandos o subir una remote shell. </p>
-									<span class="image main"><img src="../images/reto3/drupal.jpg" alt="" /></span>
-									<p>Usando drupalggedon2 vemos que ya estamos dentro de la maquina  pero la shell esta limitada y subiremos una shell en php que funciona perfecto. </p>
-									
-									<h3>shell.php</h3>
-									<span class="image main"><img src="../images/reto3/shell.jpg" alt="" /></span>
-									<p>montamos un server con python3  y en la web shell con wget subimos la shell</p>
-									<span class="image main"><img src="../images/reto3/upshell.jpg" alt="" /></span>	
-									<p>Ahora en el navegador colocamos la url/drupal-7.57/exploit.php y en nuestra terminal colocamos un nc a la escucha.Como vemos en la captura ya estamos en una reverse_shell la acomodaremos con python3 para funcionar y listo</p>
-									<span class="image main"><img src="../images/reto3/nc.jpg" alt="" /></span>
-									<!-- Preformatted Code -->
-									<h3>tty</h3>
-									<pre><code>
-										python3 -c 'import pty;pty.spawn("/bin/bash")'
-									</code></pre>
-									<p>Ya tiene otra cara esta shell, somos usuario www-data hacemos un ls y vemos que estamos dentro de la carpeta drupal voy una carpeta a tras y vemos que esta la primera flag, luego hago ls -la para ver los archivos ocultos y vemos la segunda. </p>
-									<span class="image main"><img src="../images/reto3/Fin.jpg" alt="" /></span>
+									<p>Como vemos en la imagen </p>
 									<hr class="major" />
 								<p>Herramientas utilizadas para este reto:
 									<p><a href="https://nmap.org/">Nmap</a></p>
-									<p><a href="https://github.com/droope/droopescan">DroopScan</a></p>
-									<P><a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a></p>
 								 
 								</p>
 									<h2>Foro CHE y grupo de telegram</h2>
