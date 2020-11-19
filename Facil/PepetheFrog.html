@@ -46,27 +46,23 @@
 									<p>Empezaremos con  NMAP y creo que la usaremos mucho :nmap -p- --open T5 -n url vemos el puerto 80 abierto y lo escaneamos un poco mas a fondo .</p>
 
 									<span class="image main"><img src="../images/reto2/nmap.jpg" alt="" /></span>
+									<hr class="major" />
+									<p>	Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,ami me gusta mirar el código fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>. La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.Los salvoconductos son utilizados para descifrar imagenes con<a href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a></p>
 
-									<p>
-										<hr class="major" />
-									Con nmap usando la opción --script http-enum nos reporta que hay una carpeta <b>img</b> hasta ahí bien abrimos el navegador y con la ip victima  la cargamos ,
-									ami me gusta mirar el código fuente y observamos que hay un string en base64  ,<b>UzRsdjBDMG5EdUN0MCE=</b>. 
-									La desciframos con un echo como vemos en la imagen sale la palabra salvoconducto.
-									Los salvoconductos son utilizados para descifrar imagenes con<a href="https://es.wikipedia.org/wiki/Esteganografia"> Esteganografía.</a>
-
-									Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen.
-									La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!.
-									Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
-									</p>
+									<p>Ahora accedemos en la carpeta img  con en el navegador  y nos aparece una imagen. La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!. Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.</p>
 									<hr class="major" />
 									<span class="image main"><img src="../images/reto2/base64.jpg" alt="" /></span>
 									<hr class="major" />
 									<h2>Acceso a la maquina por SSh</h2>
 	
 									<p>En nuestra terminal usaremos las credenciales del archivo de texto ssh 10.10.10.XX</p>
-									<p> usuario: Pepethefrog
-										 pass:   4d3l4nt3p3p3
-									</p>
+									<h3>Credenciales</h3>
+								<div class="box">
+									<p>	usuario: Pepethefrog pass:   4d3l4nt3p3p3</p>
+									
+								</div>
+
+									
 									<hr class="major" />
 								<p> Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog
 									listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
