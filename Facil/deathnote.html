@@ -37,68 +37,30 @@
 									<header class="main">
 										<h1>DEATHNOTE</h1>
 									</header>
+									<div class= "content">
+										<p>HackMadrid%27 es una comunidad compuesta por miembros que desean iniciarse en la cultura "hacking", mientras otros son experimentados hackers que tienen muchos años de andadura trabajando en diferentes proyectos, para universidades, comunidades, gobiernos y empresas.</p>
+										<p>Los miembros de HackMadrid se esfuerzan por estar a la vanguardia en la investigación y experimentación, asistiendo regularmente a los eventos que organiza la comunidad. Participan en conferencias nacionales e internacionales sobre la cultura hacking (Defcon, BlackHat, HOPE, OWASP AppSec, Hacker Halted, Navaja Negra, Rooted Con, CyberCamp, entre otras).</p> 
+										<p>Desarrollamos e impulsamos la participación de toda la comunidad de hackers a través de reuniones regulares, presentaciones, talleres, CTF y cualquier tipo de evento que ayude a fortalecer la cultura "hacking". Nuestras actividades construyen un foro adecuado para presentar investigaciones, desarrollado nuevas técnicas y metodologías, al mismo tiempo que proporciona un valioso recurso humano "el conocimiento", que junto a la "inteligencia" permite el desarrollo de proyectos.</p>
+										<p>HackMadrid pertenece a una comunidad internacional de hacking: Por Ciento 27 (%27), junto a HackMiami, Hack The Bay y HackNewYork. Impulsamos el uso de tecnologías de Software Libre y colaboramos en forma activa con otras comunidades, estimulando eventos "multicomunitarios".</p
 
+									</div>
 									<span class="image main"><img src="../images/reto5/reto5.jpg" alt="" /></span>
 
 									<h2> Enumeracion de servicios y puertos  </h2>
 
 									<p>Comenzaremos  iniciando el nmap y nos aparece el puerto 80 abierto colocando la ip en el navegador  y vemos una imagen de un libro miramos el codigo fuente  y tenemos un comentario que dice </p>
-									<span class="image main"><img src="../images/reto4/about.jpg" alt="" /></span>
+									<span class="image main"><img src="../images/reto5/diario1.jpg" alt="" /></span>
+
+									<header class="major">
 
 									<h2>Si leemos de derecha a izquierzda</h2>
-									<p align="center">
-									Etreus, evall al y aicnerefer al se ortauc .otneirbmah le y odiláp le onis ,omet euq sol ogral olep noc y sodatnemila neib serbmoh sotse nos on
-									<br>no son estos hombres bien alimentados y con pelo largo los que temo, sino el palido y el hambriento. <strong>cuatro es la referencia y la llave, suerte.</strong>
 									
-									</p>
-									<hr class="major" />
-									<p>Este parrafo esta cifrado con ROT4,usare la herramienta <a href="https://gchq.github.io/CyberChef/">CyberChef</a></p>
-									<p align="center">
-										Teve tshiv gsrxmryev ip hmvigxsvms zmkirivi hifivew zmwmxev
-										<br>Para poder continuar el directorio vigenere deberas visitar ///http://url/VIGENERE/
-									</p>
-									<hr class="major" />
-									<span class="image main"><img src="../images/reto4/vigenere.jpg" alt="" /></span>
-									<hr class="major" />
-									<p>Como vemos en la imagen nos sale un codigo raro esta cifrado con <a href="https://es.wikipedia.org/wiki/Cifrado_de_Vigen%C3%A8re">vigenere</a> necesitaremos una key que es la que nos da el anterior parrafo
-									<br>y si miramos el codigo fuente hay otro codigo raro en un comentario </p>
-									<span class="image main"><img src="../images/reto4/cf.jpg" alt="" /></span>
-									<hr class="major" />
+									<header class="major"></header>
 
-									<p align="center">Con CyberChef lo desencriptamos acordaros la llave es cuatro 
-										<br>CPEKZUWU EE UWTYCMFFKI V6?:2=[ C2 U236R 6= ?@>3E6 56= UCÃ³B:>@ 5:T64S@E:@ ^W_?`?CY^
-										<br>AVERIGUA EL DIRECTORIO V6?:2=[ J2 D236D 6= ?@>3C6 56= ACH³K:>@ 5:F64Q@K:@ ^W_?`?JH^
-										
-										<br>RCSMR OFCCBFBCF: LHJ OEINMVQKGIXEHQM DX XSPLODL OMÅ 
-										<br>PISTA ADICIONAL: LOS ACONTECIMIENTOS DE GENROKU AKÅ.
-										
-										<br>la pista es los 47ronin
-										<br> http://url/r0n1n47
-									</p>
-									<hr class="major" />
-
-									<p>Abrimos el enlace nuevo y nos aparece un samurai, a la imagen le pase steghide por si tenia algo oculto
-								   <br>pero oculto estaba robots.txt y sorpresa tenemos otra carpeta oculta.</p>
-								   <p align="center">
-									        http://192.168.1.216/r0n1n47/robots.txt
-										<br>User-agent: *
-										<br>Disallow: /us3r_r3t0IV/
-									</p>
-									<p>Estamos llegando al final , en esta carpeta tenemos dos archivos un zip y un readme
-									<br>http://192.168.1.216/us3r_r3t0IV/
-									<br>Fl4gs_x2.zip	 
-									<br>readme_please.txt // (-34) c4ffj0eq_mvc = p4ssw0rd_zip
-									<br>el password del archivo zip esta cifrado con ROT -13 por lo que usaremos CyberChef otra vez ^^
-									<br>Descomprimimos el zip y aqui tenmemos las dos flags enhorabuena !!!!!!
-									
-									<br>Flag_user: XX-----------------------
-									<br>Flag_root: XX-----------------------
-									</p>
-
-								<p>Herramientas utilizadas para este reto:
+									<p>Herramientas utilizadas para este reto:</p>
 									<p><a href="https://gchq.github.io/CyberChef/">CyberChef</a></p>
 								 
-								</p>
+									
 									<h2>Foro CHE y grupo de telegram</h2>
 									<p><a href="http://ctf.comunidadhackingetico.es/home">Comunidad de Hacking Ético</a></p>
 									<span class="icon main"><img src="../images/logo.jpg" alt="" /></span>
