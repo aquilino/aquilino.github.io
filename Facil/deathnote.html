@@ -42,26 +42,18 @@
 
 									<h2> Enumeracion de servicios y puertos  </h2>
 
-									<p>Comenzaremos  iniciando el nmap y nos aparece el puerto 80 abierto colocando la ip en el navegador  y vemos una imagen de un libro miramos el codigo fuente  y tenemos un comentario que dice "Haz Click para utilizar el bolÃ­grafo como llave para ver el doble fondo",le damos al archivo index2.html y saltamos a otra pagina.</p>
-
+									<p>Comenzaremos  colocando la ip en el navegador  y vemos una imagen de un diario miramos el codigo fuente  y tenemos un comentario ,le damos al archivo index2.html y saltamos a otra pagina.</p>
+									<p align="center">
+										"index2.html"><font color="black"> Haz Click para utilizar el bolÃ­grafo como llave para ver el doble fondo</font>
+									</p>
+									<p>En la segunda pagina lo mismo miramos el codigo fuente y tenemos mas comentarios, le damos a instrucciones.html y nos vamos a otra, en instrucciones no veo nada que me llame la atencion.</p>
+									<p align="center">
+										"instrucciones.html"><font color="black"> Haz Click para ver las Instrucciones</font>
+									</p>
 									<span class="image main"><img src="../images/reto5/collage.jpg" alt="" /></span>
-
-									<header class="major">
-
-									<h2>Si leemos de derecha a izquierzda</h2>
-									
-									<header class="major"></header>
-
-									<p>Herramientas utilizadas para este reto:</p>
-									<p><a href="https://gchq.github.io/CyberChef/">CyberChef</a></p>
-								 
-									
-									<h2>Foro CHE y grupo de telegram</h2>
-									<p><a href="http://ctf.comunidadhackingetico.es/home">Comunidad de Hacking Ético</a></p>
-									<span class="icon main"><img src="../images/logo.jpg" alt="" /></span>
-									<p>Podeis pedir ayuda de cualquier reto a la comunidad. <a href="https://t.me/HackingEticoEs" class="bbcode_url">Grupo de Telegram</a></p>
-
-
+									<p>Seguimos con la Enumeracion y iniciaremos nmap veremos que solo nos muestra el puerto 80 abierto entonces profundizaremos un poco mas en la busqueda. Utilizaremos la funcion --script http-enum para que fuzze un poco el servicio 80.</p>
+									<span class="image main"><img src="../images/reto5/nmap.jpg" alt="" /></span>
+									<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login ya va saliendo algo interesante. Volvemos al navegador con la url/wordpress y nos aparece otra pagina </p>
 								</section>
 
 						</div>
