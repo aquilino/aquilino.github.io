@@ -1,79 +1,154 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>FakeNews reto III</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!-- 
 
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+Editorial by HTML5 UP 
 
-						<!-- Header -->
-								<header id="header">
-									<a href="../index.html" class="logo"><strong>Reto III</strong></a>
-									<ul class="icons">
-										<li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
-										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
-									</ul>
-								</header>
+html5up.net | @ajlkn 
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Fake News</h1>
-									</header>
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) 
 
-									<span class="image main"><img src="../images/reto3/reto3.jpg" alt="" /></span>
+--> 
 
-									<h2> Enumeracion de servicios y puertos  </h2>
+<html> 
 
-									<p>Comenzaremos colocando la ip en el navegador  .</p>
+<head> 
 
-									<span class="image main"><img src="../images/reto3/fakenews.jpg" alt="" /></span>
+<title>FakeNews reto III</title> 
 
-									<p>
-										Nos aparece el logo mu chulo de la pagina fake news, en el codigo fuente no se aprecia nada de interes.
-										Pasamos a enumerar los puertos con nmap.
-									</p>
-									<span class="image main"><img src="../images/reto3/nmap.jpg" alt="" /></span>
-	
-									<p>Como vemos en la imagen hemos utilizado  -sC con nmap para que utilice todos los script que tiene  y -sV  para saber la version. Nos inidca que en robot.txt hay una carpeta disallowed "oculta" /drupal-7.57/, aqui colocamos la url/drupal-7.57/ y nos aparece una pantalla de login.</p>
-									<p>En este punto me estallo la cabeza busque de todo con dirsearch ,droopscan esta muy bien por que es para este <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> pero nada de interes, solo para saber como funciona drupal. Busco un exploit o vulneravilidad y encuentro drupalggedon2 en <a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a> es un exploit que va muy bien para ejecutar comandos o subir una remote shell. </p>
-									<span class="image main"><img src="../images/reto3/drupal.jpg" alt="" /></span>
-									<p>Usando drupalggedon2 vemos que ya estamos dentro de la maquina  pero la shell esta limitada y subiremos una shell en php que funciona perfecto. </p>
-									
-									<h3>shell.php</h3>
-									<span class="image main"><img src="../images/reto3/shell.jpg" alt="" /></span>
-									<p>montamos un server con python3  y en la web shell con wget subimos la shell</p>
-									<span class="image main"><img src="../images/reto3/upshell.jpg" alt="" /></span>	
-									<p>Ahora en el navegador colocamos la url/drupal-7.57/exploit.php y en nuestra terminal colocamos un nc a la escucha.Como vemos en la captura ya estamos en una reverse_shell la acomodaremos con python3 para funcionar y listo</p>
-									<span class="image main"><img src="../images/reto3/nc.jpg" alt="" /></span>
-									<!-- Preformatted Code -->
-									<h3>tty</h3>
-									<pre><code>
-										python3 -c 'import pty;pty.spawn("/bin/bash")'
-									</code></pre>
-									<p>Ya tiene otra cara esta shell, somos usuario www-data hacemos un ls y vemos que estamos dentro de la carpeta drupal voy una carpeta a tras y vemos que esta la primera flag user.txt, luego hago ls -la para ver los archivos ocultos y vemos la segunda el archivo es .root. Acordaros de no limitaros a buscar solo los archivos pueden estar en cualquier lado dentro de un texto ,lo digo por experiencia he estado buscando user.txt y root.txt  varios dias en algun reto y te quedas en blanco ;) </p>
-									<hr class="major" />
-								<p>Herramientas utilizadas para este reto:
-									<p><a href="https://nmap.org/">Nmap</a></p>
-									<p><a href="https://github.com/droope/droopescan">DroopScan</a></p>
-									<P><a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a></p>
+<meta charset="utf-8" /> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+
+<link rel="stylesheet" href="../assets/css/main.css" /> 
+
+</head> 
+
+<body class="is-preload"> 
+
+
+
+<!-- Wrapper --> 
+
+<div id="wrapper"> 
+
+
+
+<!-- Main --> 
+
+<div id="main"> 
+
+<div class="inner"> 
+
+
+
+<!-- Header --> 
+
+<header id="header"> 
+
+<a href="../index.html" class="logo"><strong>Reto III</strong></a> 
+
+<ul class="icons"> 
+
+<li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li> 
+
+<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> 
+
+<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> 
+
+<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> 
+
+<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> --> 
+
+</ul> 
+
+</header> 
+
+
+
+<!-- Content --> 
+
+<section> 
+
+<header class="main"> 
+
+<h1>Fake News</h1> 
+
+</header> 
+
+
+
+<span class="image main"><img src="../images/reto3/reto3.jpg" alt="" /></span> 
+
+
+
+<h2> Enumeracion de servicios y puertos </h2> 
+
+
+
+<p>Comenzaremos colocando la ip en el navegador .</p> 
+
+
+
+<span class="image main"><img src="../images/reto3/fakenews.jpg" alt="" /></span> 
+
+
+
+<p> 
+
+Nos aparece el logo mu chulo de la pagina fake news, en el código fuente no se aprecia nada de interés. 
+
+Pasamos a enumerar los puertos con nmap. 
+
+</p> 
+
+<span class="image main"><img src="../images/reto3/nmap.jpg" alt="" /></span> 
+
+
+
+<p>Como vemos en la imagen hemos utilizado -sC con nmap para que utilice todos los script que tiene y -sV para saber la versión. Nos indica que en robot.txt hay una carpeta disallowed "oculta" /drupal-7.57/, aqui colocamos la url/drupal-7.57/ y nos aparece una pantalla de login.</p> 
+
+<p>En este punto me estallo la cabeza busque de todo con dirsearch ,droopscan esta muy bien por que es para este <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> pero nada de interés, solo para saber como funciona drupal. Busco un exploit o vulnerabilidad y encuentro drupalggedon2 en <a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a> es un exploit que va muy bien para ejecutar comandos o subir una remote shell. </p> 
+
+<span class="image main"><img src="../images/reto3/drupal.jpg" alt="" /></span> 
+
+<p>Usando drupalggedon2 vemos que ya estamos dentro de la maquina pero la shell esta limitada y subiremos una shell en php que funciona perfecto. </p> 
+
+
+
+<h3>shell.php</h3> 
+
+<span class="image main"><img src="../images/reto3/shell.jpg" alt="" /></span> 
+
+<p>montamos un server con python3 y en la web shell con wget subimos la shell</p> 
+
+<span class="image main"><img src="../images/reto3/upshell.jpg" alt="" /></span> 
+
+<p>Ahora en el navegador colocamos la url/drupal-7.57/exploit.php y en nuestra terminal colocamos un nc a la escucha. Como vemos en la captura ya estamos en una reverse_shell la acomodaremos con python3 para funcionar y listo</p> 
+
+<span class="image main"><img src="../images/reto3/nc.jpg" alt="" /></span> 
+
+<!-- Preformatted Code --> 
+
+<h3>tty</h3> 
+
+<pre><code> 
+
+python3 -c 'import pty;pty.spawn("/bin/bash")' 
+
+</code></pre> 
+
+<p>Ya tiene otra cara esta shell, somos usuario www-data hacemos un ls y vemos que estamos dentro de la carpeta drupal voy una carpeta a tras y vemos que esta la primera flag user.txt, luego hago ls -la para ver los archivos ocultos y vemos la segunda el archivo es .root. Acordaros de no limitaros a buscar solo los archivos pueden estar en cualquier lado dentro de un texto ,lo digo por experiencia he estado buscando user.txt y root.txt varios días en algún reto y te quedas en blanco ;) </p> 
+
+<hr class="major" /> 
+
+<p>Herramientas utilizadas para este reto: 
+
+<p><a href="https://nmap.org/">Nmap</a></p> 
+
+<p><a href="https://github.com/droope/droopescan">DroopScan</a></p> 
+
+<P><a href="https://github.com/dreadlocked/Drupalgeddon2/">github de drupalggedon2</a></p> 
+
 								 
 								</p>
 									<h2>Foro CHE y grupo de telegram</h2>
