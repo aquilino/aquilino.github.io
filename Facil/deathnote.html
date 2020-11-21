@@ -53,8 +53,21 @@
 									<span class="image main"><img src="../images/reto5/collage.jpg" alt="" /></span>
 									<p>Seguimos con la Enumeracion y iniciaremos nmap veremos que solo nos muestra el puerto 80 abierto entonces profundizaremos un poco mas en la busqueda. Utilizaremos la funcion --script http-enum para que fuzze un poco el servicio 80.</p>
 									<span class="image main"><img src="../images/reto5/nmap.jpg" alt="" /></span>
-									<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login ya va saliendo algo interesante. Volvemos al navegador con la url/wordpress y nos aparece otra pagina,esta web nos arroja mucha informacion y ademas hay letras en Rojo que destacan mucho.</p>
-									<span class="image main"><img src="../images/reto5/web2.jpg" alt="" /></span>
+									<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login ya va saliendo algo interesante. Ahora tendremos problemas al cargar la pagina por tema de dns que nos redirige al localhost  yo opte por burpsuite la opcion de match and replace "localhost por la ip de la maquina "y me funciono .Volvemos al navegador con la url/wordpress y nos aparece otra pagina,esta web nos arroja mucha informacion y ademas hay letras en Rojo que destacan mucho.</p>
+									<span class="image main"><img src="../images/reto5/clue.jpg" alt="" /></span>
+									<p>Pues accedemos a la url/CLUE y tenemos una web con un par de listados uno de sospechosos y otro de combinaciones ,con estos dos listados probaremos con hydra para sacar un usuario y contraseña de wordpress.</p>
+									<span class="image main"><img src="../images/reto5/Clue2.jpg" alt="" /></span>
+									<hr class="major" />
+									<h2>Utilizacion de Hydra</h2>
+									<p>La herramineta Hydra es muy potente  a la hora de hacer fuerza bruta y si tenemos los dicicionarios pues mejor.</p>
+									<p>hydra -L sospechosos.txt -P combinaciones.txt 192.168.1.220 http-form-post "/wordpress/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Acceder&redirect_to=http%3A%2F%2F192.168.1.220%2Fwordpress%2Fwp-admin%2F&testcookie=1:Nombre de usuario desconocido. Compruébalo de nuevo o inténtalo con tu dirección de correo electrónico."</p>
+									<span class="image main"><img src="../images/reto5/cre.jpg" alt="" /></span>
+									<hr class="major" />
+									<p>Hacemos login en el panel de wordpress y premio estamos dentro , yo opte a subir una reverse_shell en el archivo 404.php del tema que tiene por defecto. Usaremos la shell que esta en /usr/share/webshells/php/php-reverse-shell.php cambiamos la ip y el puerto y ponemos <strong>nc</strong> a la escucha por el puerto que le indicamos. </p>
+									<span class="image main"><img src="../images/reto5/nc.jpg" alt="" /></span>
+									<p>Pues ya estamos dentro como usuario www-data ya es algo, yo estuve dias buscando estas flags como comente antes pueden estar en cualquier sitio , hice un grep flag * y te aparece todo lo que tenga la palabra flag, aparecieron dentro de la carpena de un tema en un readme</p>
+									<span class="image main"><img src="../images/reto5/flags.jpg" alt="" /></span>
+									<hr class="major" />
 								</section>
 
 						</div>
@@ -62,13 +75,6 @@
 					<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
 
 							<!-- Menu -->
 								<nav id="menu">
