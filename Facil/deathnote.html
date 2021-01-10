@@ -109,8 +109,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <span class="image main"><img src="../images/reto5/nmap.jpg" alt="" /></span> 
 
-<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login ya va saliendo algo interesante. Ahora tendremos problemas al cargar la pagina por tema de dns que nos redirige al localhost yo opte por burpsuite la opción de match and replace "localhost por la ip de la maquina "y me funciono .Volvemos al navegador con la url/wordpress y nos aparece otra pagina,esta web nos arroja mucha información y ademas hay letras en Rojo que destacan mucho.</p> 
+<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login, ya va saliendo algo interesante.Ahora tendremos problemas con la web nos hara un redirect  al localhost, añadiremos al /etc/hosts la ip y de nombre localhost en nuestro localhost lo editaremos un momento le añadimos algo al nombre "localhost.admin " .Volvemos al navegador con la url/wordpress y nos aparece otra pagina,esta web nos arroja mucha información y ademas hay letras en Rojo que destacan mucho.</p> 
 
+<h2>Bypass </h2>
+<span class="image main"><img src="../images/reto5/Bypass SSRF1.jpg" alt="" /></span>
+
+<hr class="major" />
 <span class="image main"><img src="../images/reto5/clue.jpg" alt="" /></span> 
 
 <p>Pues accedemos a la url/CLUE y tenemos una web con un par de listados uno de sospechosos y otro de combinaciones ,con estos dos listados probaremos con hydra para sacar un usuario y contraseña de wordpress.</p> 
@@ -137,6 +141,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <span class="image main"><img src="../images/reto5/flags.jpg" alt="" /></span> 
 
+<p>P.D-Duarante el transcurso de la enumeracion  va apareciendo el nombre de <b>kira</b> varias veces. </p>
 <hr class="major" /> 
 
 <p>Herramientas utilizadas para este reto: 
