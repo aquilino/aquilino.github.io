@@ -109,10 +109,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <span class="image main"><img src="../images/reto5/nmap.jpg" alt="" /></span> 
 
-<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login, ya va saliendo algo interesante.Ahora tendremos problemas con la web nos hara un redirect  al localhost, añadiremos al /etc/hosts la ip y de nombre localhost en nuestro localhost lo editaremos un momento le añadimos algo al nombre "localhost.admin " .Volvemos al navegador con la url/wordpress y nos aparece otra pagina,esta web nos arroja mucha información y ademas hay letras en Rojo que destacan mucho.</p> 
-
 <h2>Bypass </h2>
-<span class="image main"><img src="../images/reto5/Bypass SSRF1.jpg" alt="" /></span>
+<p>Como vemos en la imagen al profundizar el escaneo nos reporta la carpeta wordpress para hacer un login, ya va saliendo algo interesante.Ahora tendremos problemas con la web nos hara un redirect  al localhost, en este punto haremos un LOCAL PORT FORWARDING   ssh -L 80:ip_maquina_victima:80 tuusuario@localhost"Con ssh -L hacemos que el puerto 80 de la maquina victima se redirija a nuestro puerto 80 asi cuando llae a localhost para cargar la pagina  lo hara sin problemas.
+Volvemos al navegador con la url/wordpress y nos aparece otra pagina,esta web nos arroja mucha información y ademas hay letras en Rojo que destacan mucho.</p> 
 
 <hr class="major" />
 <span class="image main"><img src="../images/reto5/clue.jpg" alt="" /></span> 
