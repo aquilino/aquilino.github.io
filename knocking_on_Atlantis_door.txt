@@ -1,0 +1,2 @@
+Para abrir  las puertas esta es la secuencia
+1100,800,666 
