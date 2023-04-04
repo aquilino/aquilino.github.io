@@ -1,0 +1,43 @@
+Docker Volúmenes y Puertos
+==========================
+
+Docker es una herramienta popular para el desarrollo y la implementación de aplicaciones en contenedores. Los contenedores proporcionan un entorno aislado para cada aplicación, lo que permite una mayor portabilidad y escalabilidad. En este artículo, hablaremos sobre dos conceptos clave de Docker: Volúmenes y Puertos.
+
+Volúmenes
+---------
+
+Un volumen en Docker es una forma de almacenar datos persistentes fuera de un contenedor. Esto significa que los datos se mantienen aun después de que se detenga o elimine el contenedor. Esto es útil para almacenar datos importantes, como bases de datos, configuraciones y archivos de registro.
+
+Para crear un volumen en Docker, puedes usar el comando \`docker volume create\`. Luego, puedes montar el volumen en un contenedor con el comando \`docker run\` y especificar la opción \`--mount\` o \`-v\`.
+
+Por ejemplo, aquí está cómo crear un volumen y montarlo en un contenedor con el comando \`docker run\`:
+
+    $ docker volume create mydata
+    $ docker run -it --mount source=mydata,target=/app/data ubuntu bash
+    
+
+Puertos
+-------
+
+Los puertos en Docker permiten que las aplicaciones en los contenedores se comuniquen con el mundo exterior. Cada contenedor puede escuchar en un puerto específico, y las solicitudes entrantes se pueden redirigir a ese puerto en el contenedor. Esto es útil para permitir que las aplicaciones en contenedores se comuniquen con otras aplicaciones y servicios externos.
+
+Para exponer un puerto en un contenedor en Docker, puedes usar el comando \`docker run\` y especificar la opción \`--publish\` o \`-p\`. Por ejemplo, si tu aplicación escucha en el puerto 80 dentro de un contenedor, puedes exponer ese puerto al host con \`--publish 80:80\`:
+
+    $ docker run -p 80:80 myapp
+    
+
+Esto redirigirá las solicitudes entrantes al puerto 80 en el host al puerto 80 en el contenedor.
+
+Ejemplo de ejecución
+--------------------
+
+Vamos a hacer un ejemplo práctico para ilustrar cómo funcionan los volúmenes y los puertos en Docker. Supongamos que queremos ejecutar una base de datos MySQL en un contenedor y almacenar los datos en un volumen externo para persistencia. Además, queremos exponer el puerto 3306 en el contenedor para que podamos conectarnos a la base de datos desde el host.
+
+Aquí está el comando que se utilizaría para ejecutar el contenedor con un volumen externo y un puerto expuesto:
+
+    $ docker run -d -p 3306:3306 --mount source=mydbdata,target=/var/lib/mysql --name mydb mysql
+    
+
+Este comando ejecutará el contenedor de MySQL en segundo plano (\`-d\`) y redirigirá el puerto 3306 en el host al puerto 3306 en el contenedor (\`-p 3306:3306\`). También montará el volumen \`mydbdata\` en \`/var/lib/mysql\` en el contenedor (\`--mount source=mydbdata,target=/var/lib/mysql\`). Finalmente, le dará al contenedor el nombre \`mydb\` (\`--name mydb\`).
+
+Eso es todo sobre Docker Volúmenes y Puertos. Con estos conceptos básicos bajo el brazo, estás listo para empezar a trabajar con contenedores de Docker de manera efectiva.
