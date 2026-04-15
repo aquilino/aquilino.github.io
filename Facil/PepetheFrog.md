@@ -1,3 +1,12 @@
+---
+title: PEPE THE FROG
+date: 2024-01-20
+author: h1dr0
+tags: [ctf, ssh, nmap, steganography, facil]
+category: CTF
+difficulty: Facil
+---
+
 PEPE THE FROG
 =============
 
@@ -12,10 +21,10 @@ Empezaremos con NMAP y creo que la usaremos mucho :nmap -p- --open T5 -n url vem
 
 * * *
 
-Con nmap usando la opción --script http-enum nos reporta que hay una carpeta img, hasta ahí bien abrimos el navegador y con la url/img accedemos a la misma.  
+Con nmap usando la opción --script http-enum nos reporta que hay una carpeta img, hasta ahí bien abrimos el navegador y con la url/img accedemos a la misma.
 Observamos en el codigo fuente que hay un string en base64,UzRsdjBDMG5EdUN0MCE=.
 
-Ahora accedemos a la carpeta img con el navegador y nos aparece una imagen.La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!.  
+Ahora accedemos a la carpeta img con el navegador y nos aparece una imagen.La descargamos y ahora tenemos una imagen y un salvoconducto hummm!!.
 Usaremos Steghide para comprobar si hay algo oculto nos pide un salvoconducto se lo damos y premio nos reporta un archivo de texto.
 
 * * *
@@ -31,9 +40,9 @@ Acceso a la maquina por SSh
 
 En nuestra terminal usaremos las credenciales del archivo de texto ssh 10.10.10.XX
 
-Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog,  
-listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,  
-listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash\_none,  
+Bueno pues ya estamos dentro de la maquina victima y vemos que estamos en la carpeta pepethefrog,
+listamos para ver que hay en la carpeta y nos aparece la primera Flag user.txt,
+listamos otra vez con ls -a para ver archivos y carpetas ocultos y vemos otro archivo que no me cuadra .bash\_none,
 hacemos un cat y zas en toda la boca, la siguiente Flag root.txt.
 
 ### Credenciales

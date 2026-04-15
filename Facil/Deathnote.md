@@ -1,3 +1,12 @@
+---
+title: DEATHNOTE
+date: 2024-02-15
+author: h1dr0
+tags: [ctf, wordpress, hydra, nmap, reverse-shell, facil]
+category: CTF
+difficulty: Facil
+---
+
 DEATHNOTE
 =========
 

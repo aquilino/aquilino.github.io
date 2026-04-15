@@ -1,3 +1,12 @@
+---
+title: OCLAT
+date: 2024-01-15
+author: h1dr0
+tags: [ctf, ftp, nmap, facil]
+category: CTF
+difficulty: Facil
+---
+
 OCLAT
 =====
 

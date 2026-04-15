@@ -1,0 +1,70 @@
+[
+  {
+    "file": "Facil/Oclat.md",
+    "title": "OCLAT",
+    "date": "2024-01-15",
+    "author": "h1dr0",
+    "tags": ["ctf", "ftp", "nmap", "facil"],
+    "category": "CTF",
+    "difficulty": "Facil",
+    "excerpt": "Writeup del reto OCLAT - Enumeración de servicios FTP y SSH"
+  },
+  {
+    "file": "Facil/PepetheFrog.md",
+    "title": "PEPE THE FROG",
+    "date": "2024-01-20",
+    "author": "h1dr0",
+    "tags": ["ctf", "ssh", "nmap", "steganography", "facil"],
+    "category": "CTF",
+    "difficulty": "Facil",
+    "excerpt": "Writeup del reto PepeFrog - Esteganografía y acceso SSH"
+  },
+  {
+    "file": "Facil/FakeNews.md",
+    "title": "Fake News",
+    "date": "2024-02-01",
+    "author": "h1dr0",
+    "tags": ["ctf", "drupal", "nmap", "reverse-shell", "facil"],
+    "category": "CTF",
+    "difficulty": "Facil",
+    "excerpt": "Writeup del reto FakeNews - Explotación Drupal y reverse shell"
+  },
+  {
+    "file": "Facil/Cryptocorp.md",
+    "title": "CRYPTOCORP",
+    "date": "2024-02-08",
+    "author": "h1dr0",
+    "tags": ["ctf", "criptografia", "cyberchef", "steganography", "facil"],
+    "category": "CTF",
+    "difficulty": "Facil",
+    "excerpt": "Writeup del reto Cryptocorp - Criptografía y esteganografía"
+  },
+  {
+    "file": "Facil/Deathnote.md",
+    "title": "DEATHNOTE",
+    "date": "2024-02-15",
+    "author": "h1dr0",
+    "tags": ["ctf", "wordpress", "hydra", "nmap", "reverse-shell", "facil"],
+    "category": "CTF",
+    "difficulty": "Facil",
+    "excerpt": "Writeup del reto Deathnote - Fuerza bruta WordPress y reverse shell"
+  },
+  {
+    "file": "Articulos/Docker.md",
+    "title": "Docker Volúmenes y Puertos",
+    "date": "2024-03-01",
+    "author": "h1dr0",
+    "tags": ["docker", "contenedores", "devops", "tutorial"],
+    "category": "Articulo",
+    "excerpt": "Tutorial sobre volúmenes y puertos en Docker"
+  },
+  {
+    "file": "Articulos/Podman.md",
+    "title": "Podman: una alternativa a Docker",
+    "date": "2024-03-10",
+    "author": "h1dr0",
+    "tags": ["podman", "docker", "contenedores", "devops", "tutorial"],
+    "category": "Articulo",
+    "excerpt": "Introducción a Podman como alternativa a Docker"
+  }
+]

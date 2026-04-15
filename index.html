@@ -1,271 +1,388 @@
 <!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-
 <head>
-	<title>aquilino.github.io</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+    <title>h1dr0 - CTF Writeups</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .markdown-content {
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
+        .markdown-content pre {
+            background: #2e3450;
+            padding: 1em;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .markdown-content code {
+            background: #2e3450;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .markdown-content pre code {
+            background: none;
+            padding: 0;
+        }
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .markdown-content blockquote {
+            border-left: 4px solid #4a5568;
+            padding-left: 1em;
+            margin-left: 0;
+            color: #718096;
+        }
+        .markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        .markdown-content th, .markdown-content td {
+            border: 1px solid #4a5568;
+            padding: 0.5em;
+        }
+        .markdown-content th {
+            background: #2e3450;
+        }
+        .search-container {
+            margin-bottom: 1em;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background: #1a1a2e;
+            color: #e2e8f0;
+            font-size: 0.9em;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .filter-container {
+            display: flex;
+            gap: 0.5em;
+            flex-wrap: wrap;
+            margin-bottom: 1em;
+        }
+        .filter-btn {
+            padding: 0.3em 0.8em;
+            border: 1px solid #4a5568;
+            border-radius: 20px;
+            background: transparent;
+            color: #a0aec0;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+        .search-results {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .search-result-item {
+            padding: 0.8em;
+            border-bottom: 1px solid #2d3748;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .search-result-item:hover {
+            background: #2d3748;
+        }
+        .search-result-title {
+            font-weight: bold;
+            color: #e2e8f0;
+            margin-bottom: 0.3em;
+        }
+        .search-result-meta {
+            font-size: 0.75em;
+            color: #718096;
+        }
+        .search-result-tags {
+            margin-top: 0.3em;
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.1em 0.5em;
+            margin-right: 0.3em;
+            background: #2d3748;
+            border-radius: 3px;
+            font-size: 0.7em;
+            color: #a0aec0;
+        }
+        .tag.ctf { background: #48bb78; color: white; }
+        .tag.articulo { background: #4299e1; color: white; }
+        .frontmatter {
+            border-bottom: 1px solid #4a5568;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+        }
+        .frontmatter-meta {
+            font-size: 0.85em;
+            color: #718096;
+        }
+        .no-results {
+            text-align: center;
+            color: #718096;
+            padding: 2em;
+        }
+    </style>
 </head>
-
 <body class="is-preload">
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>h1dr0</strong></a>
+                    <ul class="icons">
+                        <li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+                    </ul>
+                </header>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+                <section id="banner">
+                    <div class="content">
+                        <h1>CTF Writeups & Artículos</h1>
+                        <p>Writeups de retos CTF y artículos sobre hacking, pentesting y seguridad.</p>
+                        <p><a href="http://ctf.comunidadhackingetico.es/challenges">Comunidad de Hacking Ético</a></p>
+                        <span class="image main"><img src="images/logo.jpg" alt="Logo" /></span>
+                    </div>
+                </section>
 
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
+                <section id="content-area">
+                    <div id="markdown-content" class="markdown-content"></div>
+                </section>
+            </div>
+        </div>
 
-				<!-- Header -->
-				<header id="header">
-					<a class="logo"><strong>h1dr0</strong></a>
-					<ul class="icons">
-						<li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span
-									class="label">Telegram</span></a></li>
-						<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
-					</ul>
-				</header>
+        <div id="sidebar">
+            <div class="inner">
+                <h2 id="content">aquilino.github.io</h2>
 
-				<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-					 <!--<P contenteditable = "true" corrección ortográfica = "true"> Esto es un párrafo editable. Intente editar el texto. </P>-->
-						<h1>Hola buenas soy h1dr0</h1>
-						<p>Por aqui publicare todo lo referente al pentesting, writeup's de los retos ,CTF's y mas cosas
-							.....</p>
+                <section id="search-section">
+                    <header class="major">
+                        <h2>Buscar</h2>
+                    </header>
+                    <div class="search-container">
+                        <input type="text" id="search-input" class="search-input" placeholder="Buscar por título, tag o palabra clave...">
+                    </div>
+                    <div class="filter-container">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="CTF">CTF</button>
+                        <button class="filter-btn" data-filter="Articulo">Artículos</button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </section>
 
-						<p>Empezaremos por los retos de la Comunidad de Hacking Ético en Español.</p>
-						<p><a href="http://ctf.comunidadhackingetico.es/challenges">Comunidad de Hacking Ético</a></p>
-						<span class="icon main"><img src="images/logo.jpg" alt="" /></span>
-					</div>
-					<!--<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/nmap-logo.jpg" alt="" />
-									</span>-->
-				</section>
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Página de Inicio</a></li>
 
-				<!-- Section 
-								<section>
-									<header class="major">
-										<h2>Erat lacinia</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									</div>
-								</section>-->
+                        <header class="major">
+                            <h2>Retos CTF</h2>
+                        </header>
+                        <li>
+                            <span class="opener">Fácil</span>
+                            <ul>
+                                <li><a href="#" data-md="Facil/Oclat.md">Reto I - OCLAT</a></li>
+                                <li><a href="#" data-md="Facil/PepetheFrog.md">Reto II - PepeFrog</a></li>
+                                <li><a href="#" data-md="Facil/FakeNews.md">Reto III - FakeNews</a></li>
+                                <li><a href="#" data-md="Facil/Cryptocorp.md">Reto IV - Cryptocorp</a></li>
+                                <li><a href="#" data-md="Facil/Deathnote.md">Reto V - Deathnote</a></li>
+                            </ul>
+                        </li>
 
-				<!-- Section 
-								<section>
-									<header class="major">
-										<h2>Ipsum sed dolor</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<h3>Interdum aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<h3>Nulla amet dolore</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<h3>Tempus ullamcorper</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>Sed etiam facilis</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>Feugiat lorem aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>Amet varius aliquam</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</div>
-								</section>-->
+                        <header class="major">
+                            <h2>Artículos</h2>
+                        </header>
+                        <li><a href="#" data-md="Articulos/Docker.md">Docker: Volúmenes y Puertos</a></li>
+                        <li><a href="#" data-md="Articulos/Podman.md">Podman: Alternativa a Docker</a></li>
+                    </ul>
+                </nav>
 
-			</div>
-		</div>
+                <footer id="footer">
+                    <p class="copyright">&copy; h1dr0. All rights reserved. | Theme: <a href="https://html5up.net">HTML5 UP</a></p>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span id="busuanzi_container_site_pv">Views: <span id="busuanzi_value_site_pv"></span></span>
+                    <span class="post-meta-divider">|</span>
+                    <span id="busuanzi_container_site_uv">Visitors: <span id="busuanzi_value_site_uv"></span></span>
+                </footer>
+            </div>
+        </div>
+    </div>
 
-		<!-- Sidebar -->
-		<div id="sidebar">
-			<div class="inner">
-				<!-- Header -->
-				<h2 id="content">aquilino.github.io</h2>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script>
+        let articlesIndex = [];
+        let currentFilter = 'all';
 
-				<!-- Search 
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>-->
+        $(document).ready(function() {
+            marked.setOptions({ breaks: true, gfm: true });
 
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>Menu</h2>
-					</header>
-					<ul>
-						<li><a href="index.html">Pagina De Inicio</a></li>
+            // Load index
+            fetch('index.json')
+                .then(res => res.json())
+                .then(data => {
+                    articlesIndex = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    renderSearchResults(articlesIndex);
+                });
 
-						<!--<li><a href="elements.html">Elements</a></li>-->
+            // Search functionality
+            $('#search-input').on('input', function() {
+                const query = $(this).val().toLowerCase();
+                filterAndRender(query, currentFilter);
+            });
 
-						<header class="major">
-							<h2>Retos CTF</h2>
-						</header>
-						<li>
-							<span class="opener">Facil</span>
-							<ul>
-								<li><a href="Facil/oclat.html">Reto I</a></li>
-								<li><a href="Facil/pepefrog.html">Reto II</a></li>
-								<li><a href="Facil/Fakenews.html">Reto III</a></li>
-								<li><a href="Facil/Cryptocorp.html">Reto IV</a></li>
-								<li><a href="Facil/deathnote">Reto V</a></li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Medio</span>
-							<ul>
-								<li><a href="Medio/#">Reto VI</a></li>
-								<li><a href="Medio/#">Reto VII</a></li>
-							</ul>
-						</li>
+            // Filter buttons
+            $('.filter-btn').on('click', function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                currentFilter = $(this).data('filter');
+                const query = $('#search-input').val().toLowerCase();
+                filterAndRender(query, currentFilter);
+            });
 
-						<li>
-							<span class="opener">Dificil</span>
-							<ul>
-								<li><a href="Dificil/#">Reto VIII</a></li>
-								<li><a href="Dificil/#">Reto IX</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
+            function filterAndRender(query, filter) {
+                let results = articlesIndex;
+                
+                if (filter !== 'all') {
+                    results = results.filter(a => a.category === filter);
+                }
+                
+                if (query) {
+                    results = results.filter(a => 
+                        a.title.toLowerCase().includes(query) ||
+                        a.tags.some(t => t.toLowerCase().includes(query)) ||
+                        a.author.toLowerCase().includes(query) ||
+                        a.excerpt.toLowerCase().includes(query)
+                    );
+                }
+                
+                renderSearchResults(results);
+            }
 
-				<!-- Section
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
+            function renderSearchResults(results) {
+                const container = $('#search-results');
+                if (results.length === 0) {
+                    container.html('<div class="no-results">No se encontraron resultados</div>');
+                    return;
+                }
+                
+                container.html(results.map(article => `
+                    <div class="search-result-item" data-md="${article.file}">
+                        <div class="search-result-title">${article.title}</div>
+                        <div class="search-result-meta">
+                            ${article.date} · ${article.author}
+                        </div>
+                        <div class="search-result-tags">
+                            <span class="tag ${article.category.toLowerCase()}">${article.category}</span>
+                            ${article.tags.slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join(''));
 
-							<!-- Section 
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>-->
+                // Click handlers for results
+                $('.search-result-item').on('click', function() {
+                    const mdFile = $(this).data('md');
+                    history.pushState({md: mdFile}, '', '?md=' + encodeURIComponent(mdFile));
+                    loadMarkdown();
+                });
+            }
 
-				<!-- Footer -->
-				<footer id="footer">
-					<p class="copyright">&copy; h1dr0. All rights reserved.| Theme Design By: <a href="https://html5up.net">HTML5 UP</a></p>
-					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-					<span id="busuanzi_container_site_pv">Views: <span id="busuanzi_value_site_pv"></span></span>
-					<span class="post-meta-divider">|</span>
-					<span id="busuanzi_container_site_uv">Visitors: <span id="busuanzi_value_site_uv"></span></span>
-				</footer>
+            function loadMarkdown() {
+                const params = new URLSearchParams(window.location.search);
+                const mdFile = params.get('md');
 
-			</div>
-		</div>
+                if (mdFile) {
+                    fetch(mdFile)
+                        .then(response => {
+                            if (!response.ok) throw new Error('File not found');
+                            return response.text();
+                        })
+                        .then(text => {
+                            // Parse frontmatter
+                            const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+                            let content = text;
+                            let meta = null;
+                            
+                            if (frontmatterMatch) {
+                                try {
+                                    meta = jsyaml.load(frontmatterMatch[1]);
+                                    content = frontmatterMatch[2];
+                                } catch (e) {
+                                    console.error('Error parsing frontmatter:', e);
+                                }
+                            }
+                            
+                            // Render frontmatter meta if present
+                            let html = '';
+                            if (meta) {
+                                html += `
+                                    <div class="frontmatter">
+                                        <h1>${meta.title || ''}</h1>
+                                        <div class="frontmatter-meta">
+                                            <strong>Fecha:</strong> ${meta.date || ''} · 
+                                            <strong>Autor:</strong> ${meta.author || ''} · 
+                                            <strong>Categoría:</strong> ${meta.category || ''}
+                                            ${meta.difficulty ? `· <strong>Dificultad:</strong> ${meta.difficulty}` : ''}
+                                        </div>
+                                        <div class="search-result-tags" style="margin-top: 0.5em;">
+                                            ${(meta.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            html += marked.parse(content);
+                            
+                            document.getElementById('markdown-content').innerHTML = html;
+                            document.getElementById('banner').style.display = 'none';
+                        })
+                        .catch(err => {
+                            document.getElementById('markdown-content').innerHTML = 
+                                '<p style="color: red;">Error cargando el archivo: ' + mdFile + '</p>';
+                        });
+                }
+            }
 
-	</div>
+            // Handle menu clicks
+            $('[data-md]').on('click', function(e) {
+                e.preventDefault();
+                const mdFile = $(this).data('md');
+                history.pushState({md: mdFile}, '', '?md=' + encodeURIComponent(mdFile));
+                loadMarkdown();
+            });
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+            // Handle browser back/forward
+            window.addEventListener('popstate', function(e) {
+                if (e.state && e.state.md) {
+                    loadMarkdown();
+                } else {
+                    document.getElementById('markdown-content').innerHTML = '';
+                    document.getElementById('banner').style.display = 'block';
+                }
+            });
 
+            // Initial load
+            loadMarkdown();
+        });
+    </script>
 </body>
-
 </html>

@@ -1,3 +1,12 @@
+---
+title: Fake News
+date: 2024-02-01
+author: h1dr0
+tags: [ctf, drupal, nmap, reverse-shell, facil]
+category: CTF
+difficulty: Facil
+---
+
 Fake News
 =========
 
@@ -32,15 +41,15 @@ montamos un server con python3 y en la web shell con wget subimos la shell
 
 Ahora en el navegador colocamos la url/drupal-7.57/exploit.php y en nuestra terminal colocamos un nc a la escucha. Como vemos en la captura ya estamos en una reverse\_shell la acomodaremos con python3 para funcionar y listo
 
-![](../images/reto3/nc.jpg) 
+![](../images/reto3/nc.jpg)
 
 ### tty
 
-     
-    
-    python3 -c 'import pty;pty.spawn("/bin/bash")' 
-    
-    
+
+
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+
 
 Ya tiene otra cara esta shell, somos usuario www-data hacemos un ls y vemos que estamos dentro de la carpeta drupal voy una carpeta a tras y vemos que esta la primera flag user.txt, luego hago ls -la para ver los archivos ocultos y vemos la segunda el archivo es .root. Acordaros de no limitaros a buscar solo los archivos pueden estar en cualquier lado dentro de un texto ,lo digo por experiencia he estado buscando user.txt y root.txt varios días en algún reto y te quedas en blanco ;)
 
