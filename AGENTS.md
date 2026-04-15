@@ -12,10 +12,12 @@ Static GitHub Pages site with Markdown rendering via Marked.js (client-side). No
 - Uses js-yaml to parse frontmatter metadata
 - Navigation menu is centralized in `index.html` (no duplication)
 - Search system uses `index.json` for metadata lookup
+- Theme toggle (dark/light) persisted in localStorage
 
 ### Content Structure
-- **CTF Writeups**: `Facil/*.md` (5 files: Oclat, PepetheFrog, FakeNews, Cryptocorp, Deathnote)
-- **Articles**: `Articulos/*.md` (2 files: Docker, Podman)
+- **About**: `About.md` (Whoami page)
+- **CTF Writeups**: `Facil/*.md` (5 files)
+- **Articles**: `Articulos/*.md` (2 files)
 - **Images**: `images/` and `images/retoN/` subdirectories
 - **Index**: `index.json` contains metadata for all articles
 
@@ -27,30 +29,40 @@ title: Article Title
 date: 2024-01-15
 author: h1dr0
 tags: [tag1, tag2, tag3]
-category: CTF|Articulo
+category: CTF|Articulo|About
 difficulty: Facil|Medio|Dificil  # only for CTF
 ---
 ```
 
 ## Adding New Content
 
-### New Writeup/Article
-1. Create `.md` file in appropriate directory (`Facil/`, `Articulos/`)
-2. Add frontmatter at the top (see format above)
-3. Add entry to `index.json` with metadata
-4. Add entry to menu in `index.html`:
-   ```html
-   <li><a href="#" data-md="Facil/NewFile.md">Title</a></li>
+### ⚠️ IMPORTANT: 3 Steps Required
+When adding a new article, you MUST update 3 files:
+
+1. **Create `.md` file** in appropriate directory with frontmatter
+2. **Add entry to `index.json`**:
+   ```json
+   {
+     "file": "Articulos/NewArticle.md",
+     "title": "New Article Title",
+     "date": "2024-04-15",
+     "author": "h1dr0",
+     "tags": ["tag1", "tag2"],
+     "category": "Articulo",
+     "excerpt": "Short description"
+   }
    ```
-5. Use relative image paths in Markdown: `../images/retoN/image.jpg`
+3. **Add entry to menu in `index.html`**:
+   ```html
+   <li><a href="#" data-md="Articulos/NewArticle.md">New Article Title</a></li>
+   ```
+
+### New CTF Writeup
+Same 3 steps, but use `Facil/` (or `Medio/`, `Dificil/`) directory and include `difficulty` in frontmatter.
 
 ### New Category
 1. Create directory
-2. Add menu section in `index.html`:
-   ```html
-   <header class="major"><h2>Category Name</h2></header>
-   <li><a href="#" data-md="NewCategory/file.md">Title</a></li>
-   ```
+2. Add menu section in `index.html`
 
 ## Key Technical Details
 
@@ -59,6 +71,11 @@ difficulty: Facil|Medio|Dificil  # only for CTF
 - Filter buttons: Todos, CTF, Artículos
 - Results sorted by date (newest first)
 - Click result loads the markdown file
+
+### Theme System
+- Toggle button (🌙/☀️) in top-right corner
+- Persists preference in localStorage
+- Uses CSS custom properties (--bg-primary, --text-primary, etc.)
 
 ### Path Handling
 - Root `index.html` uses `assets/...` and `images/...`
@@ -69,10 +86,10 @@ difficulty: Facil|Medio|Dificil  # only for CTF
 - Clicking updates URL: `?md=Facil/Oclat.md`
 - Browser history (back/forward) works correctly
 
-### Frontmatter Rendering
-- When loading markdown, frontmatter is parsed and displayed
-- Shows: title, date, author, category, difficulty (CTF), tags
-- Content starts after frontmatter separator
+### Home Page
+- Shows last 5 articles sorted by date
+- Displays title, excerpt, and tags
+- Click to load article
 
 ## Deployment
 GitHub Pages auto-deploys on push to `main`. No build or compilation required.

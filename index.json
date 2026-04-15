@@ -1,5 +1,14 @@
 [
   {
+    "file": "About.md",
+    "title": "Whoami",
+    "date": "2024-04-15",
+    "author": "h1dr0",
+    "tags": ["about", "personal"],
+    "category": "About",
+    "excerpt": "Información sobre h1dr0 y este sitio web"
+  },
+  {
     "file": "Facil/Oclat.md",
     "title": "OCLAT",
     "date": "2024-01-15",

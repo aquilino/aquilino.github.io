@@ -6,139 +6,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent: #667eea;
+            --border: #4a5568;
+        }
+        
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --accent: #5a67d8;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        #header, #footer, #sidebar {
+            background: var(--bg-secondary) !important;
+        }
+        
+        #sidebar .inner {
+            color: var(--text-primary);
+        }
+        
+        #sidebar h2 {
+            color: var(--text-primary) !important;
+        }
+        
         .markdown-content {
             max-width: 100%;
             overflow-wrap: break-word;
         }
+        
         .markdown-content pre {
-            background: #2e3450;
+            background: var(--bg-secondary);
             padding: 1em;
             border-radius: 4px;
             overflow-x: auto;
+            border: 1px solid var(--border);
         }
+        
         .markdown-content code {
-            background: #2e3450;
+            background: var(--bg-secondary);
             padding: 0.2em 0.4em;
             border-radius: 3px;
             font-size: 0.9em;
         }
+        
         .markdown-content pre code {
             background: none;
             padding: 0;
         }
+        
         .markdown-content img {
             max-width: 100%;
             height: auto;
             border-radius: 4px;
         }
+        
         .markdown-content blockquote {
-            border-left: 4px solid #4a5568;
+            border-left: 4px solid var(--accent);
             padding-left: 1em;
             margin-left: 0;
-            color: #718096;
+            color: var(--text-secondary);
         }
+        
         .markdown-content table {
             width: 100%;
             border-collapse: collapse;
             margin: 1em 0;
         }
+        
         .markdown-content th, .markdown-content td {
-            border: 1px solid #4a5568;
+            border: 1px solid var(--border);
             padding: 0.5em;
         }
+        
         .markdown-content th {
-            background: #2e3450;
+            background: var(--bg-secondary);
         }
+        
         .search-container {
             margin-bottom: 1em;
         }
+        
         .search-input {
             width: 100%;
             padding: 0.5em;
-            border: 1px solid #4a5568;
+            border: 1px solid var(--border);
             border-radius: 4px;
-            background: #1a1a2e;
-            color: #e2e8f0;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             font-size: 0.9em;
         }
+        
         .search-input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--accent);
         }
+        
         .filter-container {
             display: flex;
             gap: 0.5em;
             flex-wrap: wrap;
             margin-bottom: 1em;
         }
+        
         .filter-btn {
             padding: 0.3em 0.8em;
-            border: 1px solid #4a5568;
+            border: 1px solid var(--border);
             border-radius: 20px;
             background: transparent;
-            color: #a0aec0;
+            color: var(--text-secondary);
             cursor: pointer;
             font-size: 0.8em;
             transition: all 0.2s;
         }
+        
         .filter-btn:hover, .filter-btn.active {
-            background: #667eea;
-            border-color: #667eea;
+            background: var(--accent);
+            border-color: var(--accent);
             color: white;
         }
+        
         .search-results {
             max-height: 400px;
             overflow-y: auto;
         }
+        
         .search-result-item {
             padding: 0.8em;
-            border-bottom: 1px solid #2d3748;
+            border-bottom: 1px solid var(--border);
             cursor: pointer;
             transition: background 0.2s;
         }
+        
         .search-result-item:hover {
-            background: #2d3748;
+            background: var(--bg-secondary);
         }
+        
         .search-result-title {
             font-weight: bold;
-            color: #e2e8f0;
+            color: var(--text-primary);
             margin-bottom: 0.3em;
         }
+        
         .search-result-meta {
             font-size: 0.75em;
-            color: #718096;
+            color: var(--text-secondary);
         }
+        
         .search-result-tags {
             margin-top: 0.3em;
         }
+        
         .tag {
             display: inline-block;
             padding: 0.1em 0.5em;
             margin-right: 0.3em;
-            background: #2d3748;
+            background: var(--bg-secondary);
             border-radius: 3px;
             font-size: 0.7em;
-            color: #a0aec0;
+            color: var(--text-secondary);
         }
+        
         .tag.ctf { background: #48bb78; color: white; }
         .tag.articulo { background: #4299e1; color: white; }
+        
         .frontmatter {
-            border-bottom: 1px solid #4a5568;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 1em;
             margin-bottom: 1em;
         }
+        
         .frontmatter-meta {
             font-size: 0.85em;
-            color: #718096;
+            color: var(--text-secondary);
         }
+        
         .no-results {
             text-align: center;
-            color: #718096;
+            color: var(--text-secondary);
             padding: 2em;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            z-index: 1000;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .recent-articles {
+            margin-top: 2em;
+        }
+        
+        .recent-article-item {
+            padding: 1em;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 1em;
+            background: var(--bg-secondary);
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .recent-article-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .recent-article-title {
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+        
+        .recent-article-excerpt {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-top: 0.3em;
+        }
+        
+        .home-content {
+            padding: 1em;
+        }
+        
+        .home-content h1 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5em;
         }
     </style>
 </head>
 <body class="is-preload">
+    <button class="theme-toggle" id="theme-toggle" title="Cambiar tema">
+        <span id="theme-icon">🌙</span>
+    </button>
+    
     <div id="wrapper">
         <div id="main">
             <div class="inner">
@@ -151,14 +277,13 @@
 
                 <section id="banner">
                     <div class="content">
-                        <h1>CTF Writeups & Artículos</h1>
-                        <p>Writeups de retos CTF y artículos sobre hacking, pentesting y seguridad.</p>
-                        <p><a href="http://ctf.comunidadhackingetico.es/challenges">Comunidad de Hacking Ético</a></p>
-                        <span class="image main"><img src="images/logo.jpg" alt="Logo" /></span>
+                        <h1>Bienvenido</h1>
+                        <p>Writeups de CTF y artículos sobre hacking, pentesting y seguridad.</p>
                     </div>
                 </section>
 
                 <section id="content-area">
+                    <div id="home-content" class="home-content"></div>
                     <div id="markdown-content" class="markdown-content"></div>
                 </section>
             </div>
@@ -189,6 +314,7 @@
                     </header>
                     <ul>
                         <li><a href="index.html">Página de Inicio</a></li>
+                        <li><a href="#" data-md="About.md">Whoami</a></li>
 
                         <header class="major">
                             <h2>Retos CTF</h2>
@@ -235,6 +361,23 @@
         let currentFilter = 'all';
 
         $(document).ready(function() {
+            // Theme toggle
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+            
+            $('#theme-toggle').on('click', function() {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                updateThemeIcon(next);
+            });
+            
+            function updateThemeIcon(theme) {
+                $('#theme-icon').text(theme === 'dark' ? '🌙' : '☀️');
+            }
+
             marked.setOptions({ breaks: true, gfm: true });
 
             // Load index
@@ -243,7 +386,43 @@
                 .then(data => {
                     articlesIndex = data.sort((a, b) => new Date(b.date) - new Date(a.date));
                     renderSearchResults(articlesIndex);
+                    renderHomePage();
                 });
+
+            function renderHomePage() {
+                const params = new URLSearchParams(window.location.search);
+                const mdFile = params.get('md');
+                
+                if (!mdFile) {
+                    const recent = articlesIndex.slice(0, 5);
+                    const html = `
+                        <div class="home-content">
+                            <h1>Últimos artículos</h1>
+                            <div class="recent-articles">
+                                ${recent.map(a => `
+                                    <div class="recent-article-item" data-md="${a.file}">
+                                        <div class="recent-article-title">${a.title}</div>
+                                        <div class="recent-article-excerpt">${a.excerpt}</div>
+                                        <div class="search-result-tags" style="margin-top: 0.3em;">
+                                            <span class="tag ${a.category.toLowerCase()}">${a.category}</span>
+                                            ${a.tags.slice(0, 2).map(t => `<span class="tag">${t}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    $('#home-content').html(html);
+                    $('#markdown-content').hide();
+                    $('#banner').hide();
+                    
+                    $('.recent-article-item').on('click', function() {
+                        const file = $(this).data('md');
+                        history.pushState({md: file}, '', '?md=' + encodeURIComponent(file));
+                        loadMarkdown();
+                    });
+                }
+            }
 
             // Search functionality
             $('#search-input').on('input', function() {
@@ -299,7 +478,6 @@
                     </div>
                 `).join(''));
 
-                // Click handlers for results
                 $('.search-result-item').on('click', function() {
                     const mdFile = $(this).data('md');
                     history.pushState({md: mdFile}, '', '?md=' + encodeURIComponent(mdFile));
@@ -312,13 +490,16 @@
                 const mdFile = params.get('md');
 
                 if (mdFile) {
+                    $('#home-content').hide();
+                    $('#markdown-content').show();
+                    $('#banner').hide();
+                    
                     fetch(mdFile)
                         .then(response => {
                             if (!response.ok) throw new Error('File not found');
                             return response.text();
                         })
                         .then(text => {
-                            // Parse frontmatter
                             const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
                             let content = text;
                             let meta = null;
@@ -332,7 +513,6 @@
                                 }
                             }
                             
-                            // Render frontmatter meta if present
                             let html = '';
                             if (meta) {
                                 html += `
@@ -353,7 +533,6 @@
                             html += marked.parse(content);
                             
                             document.getElementById('markdown-content').innerHTML = html;
-                            document.getElementById('banner').style.display = 'none';
                         })
                         .catch(err => {
                             document.getElementById('markdown-content').innerHTML = 
@@ -375,8 +554,9 @@
                 if (e.state && e.state.md) {
                     loadMarkdown();
                 } else {
-                    document.getElementById('markdown-content').innerHTML = '';
-                    document.getElementById('banner').style.display = 'block';
+                    $('#markdown-content').hide().empty();
+                    $('#home-content').show();
+                    $('#banner').hide();
                 }
             });
 
