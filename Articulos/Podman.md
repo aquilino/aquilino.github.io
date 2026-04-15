@@ -1,5 +1,5 @@
 ---
-title: Podman: una alternativa a Docker
+title: Podman una alternativa a Docker
 date: 2024-03-10
 author: h1dr0
 tags: [podman, docker, contenedores, devops, tutorial]
