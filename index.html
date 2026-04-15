@@ -198,28 +198,7 @@
             padding: 2em;
         }
         
-        .theme-toggle {
-            position: fixed;
-            top: 1em;
-            right: 1em;
-            z-index: 1000;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            transition: all 0.3s;
-        }
-        
-        .theme-toggle:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
+
         
         .recent-articles {
             margin-top: 2em;
@@ -261,16 +240,13 @@
     </style>
 </head>
 <body class="is-preload">
-    <button class="theme-toggle" id="theme-toggle" title="Cambiar tema">
-        <span id="theme-icon">🌙</span>
-    </button>
-    
     <div id="wrapper">
         <div id="main">
             <div class="inner">
                 <header id="header">
                     <a href="index.html" class="logo"><strong>h1dr0</strong></a>
                     <ul class="icons">
+                        <li><a href="#" id="theme-toggle" class="icon" title="Cambiar tema"><span id="theme-icon">🌙</span></a></li>
                         <li><a href="https://t.me/aquilinoMS" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
                     </ul>
                 </header>
