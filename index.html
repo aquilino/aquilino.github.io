@@ -249,15 +249,78 @@ display: -webkit-box;
 overflow: hidden;
 }
         
-        .home-content {
-            padding: 1em;
-        }
-        
-        .home-content h1 {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5em;
-        }
-    </style>
+.home-content {
+padding: 1em;
+}
+
+.home-content h1 {
+border-bottom: 2px solid var(--accent);
+padding-bottom: 0.5em;
+margin-bottom: 1em;
+}
+
+.home-filters {
+display: flex;
+gap: 0.5em;
+flex-wrap: wrap;
+margin-bottom: 1.5em;
+}
+
+.home-filter-btn {
+padding: 0.4em 1em;
+border: 1px solid var(--border);
+border-radius: 20px;
+background: transparent;
+color: var(--text-secondary);
+cursor: pointer;
+font-size: 0.85em;
+transition: all 0.2s;
+}
+
+.home-filter-btn:hover, .home-filter-btn.active {
+background: var(--accent);
+border-color: var(--accent);
+color: white;
+}
+
+.pagination {
+display: flex;
+justify-content: center;
+gap: 0.5em;
+margin-top: 2em;
+padding-top: 1em;
+border-top: 1px solid var(--border);
+}
+
+.pagination-btn {
+padding: 0.4em 0.8em;
+border: 1px solid var(--border);
+border-radius: 4px;
+background: var(--bg-secondary);
+color: var(--text-primary);
+cursor: pointer;
+font-size: 0.85em;
+transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+background: var(--accent);
+border-color: var(--accent);
+color: white;
+}
+
+.pagination-btn:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.pagination-info {
+display: flex;
+align-items: center;
+color: var(--text-secondary);
+font-size: 0.85em;
+}
+</style>
 </head>
 <body class="is-preload">
     <div id="wrapper">
@@ -352,50 +415,78 @@ overflow: hidden;
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-    <script>
-        let articlesIndex = [];
-        let currentFilter = 'all';
+<script>
+let articlesIndex = [];
+let currentFilter = 'all';
+let currentCategory = 'all';
+let currentPage = 1;
+const itemsPerPage = 6;
 
-        $(document).ready(function() {
-            // Theme toggle
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-            
-            $('#theme-toggle').on('click', function() {
-                const current = document.documentElement.getAttribute('data-theme');
-                const next = current === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', next);
-                localStorage.setItem('theme', next);
-                updateThemeIcon(next);
-            });
-            
-            function updateThemeIcon(theme) {
-                $('#theme-icon').text(theme === 'dark' ? '🌙' : '☀️');
-            }
+$(document).ready(function() {
+// Theme toggle
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
 
-            marked.setOptions({ breaks: true, gfm: true });
+$('#theme-toggle').on('click', function() {
+const current = document.documentElement.getAttribute('data-theme');
+const next = current === 'dark' ? 'light' : 'dark';
+document.documentElement.setAttribute('data-theme', next);
+localStorage.setItem('theme', next);
+updateThemeIcon(next);
+});
 
-            // Load index
-            fetch('index.json')
-                .then(res => res.json())
-                .then(data => {
-                    articlesIndex = data.sort((a, b) => new Date(b.date) - new Date(a.date));
-                    renderSearchResults(articlesIndex);
-                    renderHomePage();
-                });
+function updateThemeIcon(theme) {
+$('#theme-icon').text(theme === 'dark' ? '🌙' : '☀️');
+}
+
+marked.setOptions({ breaks: true, gfm: true });
+
+// Load index
+fetch('index.json')
+.then(res => res.json())
+.then(data => {
+articlesIndex = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+renderSearchResults(articlesIndex);
+renderHomePage();
+});
+
+function getFilteredArticles() {
+let filtered = articlesIndex;
+if (currentCategory !== 'all') {
+filtered = filtered.filter(a => a.category === currentCategory);
+}
+return filtered;
+}
+
+function getTotalPages() {
+return Math.ceil(getFilteredArticles().length / itemsPerPage);
+}
 
 function renderHomePage() {
 const params = new URLSearchParams(window.location.search);
 const mdFile = params.get('md');
 
 if (!mdFile) {
-const recent = articlesIndex.slice(0, 5);
+const filtered = getFilteredArticles();
+const totalPages = getTotalPages();
+const start = (currentPage - 1) * itemsPerPage;
+const end = start + itemsPerPage;
+const pageItems = filtered.slice(start, end);
+
+const categories = [...new Set(articlesIndex.map(a => a.category))];
+
 const html = `
 <div class="home-content">
-<h1>Últimos artículos</h1>
+<h1>Todos los artículos</h1>
+<div class="home-filters">
+<button class="home-filter-btn ${currentCategory === 'all' ? 'active' : ''}" data-category="all">Todos (${articlesIndex.length})</button>
+${categories.map(cat => `
+<button class="home-filter-btn ${currentCategory === cat ? 'active' : ''}" data-category="${cat}">${cat} (${articlesIndex.filter(a => a.category === cat).length})</button>
+`).join('')}
+</div>
 <div class="recent-articles">
-${recent.map(a => `
+${pageItems.length === 0 ? '<div class="no-results">No hay artículos en esta categoría</div>' : pageItems.map(a => `
 <div class="recent-article-item" data-md="${a.file}">
 <img class="recent-article-image" src="${a.image || 'images/logo.jpg'}" alt="${a.title}">
 <div class="recent-article-content">
@@ -409,21 +500,49 @@ ${a.tags.slice(0, 2).map(t => `<span class="tag">${t}</span>`).join('')}
 </div>
 `).join('')}
 </div>
+${totalPages > 1 ? `
+<div class="pagination">
+<button class="pagination-btn" id="prev-page" ${currentPage === 1 ? 'disabled' : ''}>← Anterior</button>
+<div class="pagination-info">Página ${currentPage} de ${totalPages}</div>
+<button class="pagination-btn" id="next-page" ${currentPage === totalPages ? 'disabled' : ''}>Siguiente →</button>
+</div>
+` : ''}
 </div>
 `;
 $('#home-content').html(html);
 $('#markdown-content').hide();
 $('#banner').hide();
 
+// Event handlers
 $('.recent-article-item').on('click', function() {
 const file = $(this).data('md');
 history.pushState({md: file}, '', '?md=' + encodeURIComponent(file));
 loadMarkdown();
 });
+
+$('.home-filter-btn').on('click', function() {
+currentCategory = $(this).data('category');
+currentPage = 1;
+renderHomePage();
+});
+
+$('#prev-page').on('click', function() {
+if (currentPage > 1) {
+currentPage--;
+renderHomePage();
+}
+});
+
+$('#next-page').on('click', function() {
+if (currentPage < getTotalPages()) {
+currentPage++;
+renderHomePage();
+}
+});
 }
 }
 
-            // Search functionality
+// Search functionality
             $('#search-input').on('input', function() {
                 const query = $(this).val().toLowerCase();
                 filterAndRender(query, currentFilter);
