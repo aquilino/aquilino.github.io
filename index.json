@@ -6,6 +6,7 @@
     "author": "h1dr0",
     "tags": ["about", "personal"],
     "category": "About",
+    "image": "images/logo.jpg",
     "excerpt": "Información sobre h1dr0 y este sitio web"
   },
   {
@@ -16,6 +17,7 @@
     "tags": ["ctf", "ftp", "nmap", "facil"],
     "category": "CTF",
     "difficulty": "Facil",
+    "image": "images/reto1/JTVCcKk.jpg",
     "excerpt": "Writeup del reto OCLAT - Enumeración de servicios FTP y SSH"
   },
   {
@@ -26,6 +28,7 @@
     "tags": ["ctf", "ssh", "nmap", "steganography", "facil"],
     "category": "CTF",
     "difficulty": "Facil",
+    "image": "images/reto2/reto2.jpg",
     "excerpt": "Writeup del reto PepeFrog - Esteganografía y acceso SSH"
   },
   {
@@ -36,6 +39,7 @@
     "tags": ["ctf", "drupal", "nmap", "reverse-shell", "facil"],
     "category": "CTF",
     "difficulty": "Facil",
+    "image": "images/reto3/reto3.jpg",
     "excerpt": "Writeup del reto FakeNews - Explotación Drupal y reverse shell"
   },
   {
@@ -46,6 +50,7 @@
     "tags": ["ctf", "criptografia", "cyberchef", "steganography", "facil"],
     "category": "CTF",
     "difficulty": "Facil",
+    "image": "images/reto4/reto4.jpg",
     "excerpt": "Writeup del reto Cryptocorp - Criptografía y esteganografía"
   },
   {
@@ -56,6 +61,7 @@
     "tags": ["ctf", "wordpress", "hydra", "nmap", "reverse-shell", "facil"],
     "category": "CTF",
     "difficulty": "Facil",
+    "image": "images/reto5/reto5.jpg",
     "excerpt": "Writeup del reto Deathnote - Fuerza bruta WordPress y reverse shell"
   },
   {
@@ -65,6 +71,7 @@
     "author": "h1dr0",
     "tags": ["docker", "contenedores", "devops", "tutorial"],
     "category": "Articulo",
+    "image": "images/logo.jpg",
     "excerpt": "Tutorial sobre volúmenes y puertos en Docker"
   },
   {
@@ -74,6 +81,7 @@
     "author": "h1dr0",
     "tags": ["podman", "docker", "contenedores", "devops", "tutorial"],
     "category": "Articulo",
+    "image": "images/logo.jpg",
     "excerpt": "Introducción a Podman como alternativa a Docker"
   }
 ]
