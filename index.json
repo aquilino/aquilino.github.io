@@ -6,7 +6,7 @@
     "author": "h1dr0",
     "tags": ["about", "personal"],
     "category": "About",
-    "image": null,
+    "image": "images/About.jpg",
     "excerpt": "Información sobre h1dr0 y este sitio web"
   },
   {
@@ -91,7 +91,6 @@
     "author": "h1dr0",
     "tags": ["pentesting", "privilege-escalation", "tutorial"],
     "category": "Articulo",
-    "image": "images/logo.jpg",
     "excerpt": "Apuntes de pentesting: escalada de privilegios, enumeración y más"
   }
 ]
