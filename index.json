@@ -6,7 +6,7 @@
     "author": "h1dr0",
     "tags": ["about", "personal"],
     "category": "About",
-    "image": "images/about.jpg",
+    "image": null,
     "excerpt": "Información sobre h1dr0 y este sitio web"
   },
   {
@@ -83,5 +83,15 @@
     "category": "Articulo",
     "image": "images/podman.svg",
     "excerpt": "Introducción a Podman como alternativa a Docker"
+  },
+  {
+    "file": "Articulos/Apuntes.md",
+    "title": "Apuntes pentesting",
+    "date": "2026-04-16",
+    "author": "h1dr0",
+    "tags": ["pentesting", "privilege-escalation", "tutorial"],
+    "category": "Articulo",
+    "image": "images/logo.jpg",
+    "excerpt": "Apuntes de pentesting: escalada de privilegios, enumeración y más"
   }
 ]
