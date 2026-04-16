@@ -6,7 +6,7 @@
     "author": "h1dr0",
     "tags": ["about", "personal"],
     "category": "About",
-    "image": "images/photo_2020-11-18_16-09-12.jpg",
+    "image": "images/about.jpg",
     "excerpt": "Información sobre h1dr0 y este sitio web"
   },
   {
@@ -71,7 +71,7 @@
     "author": "h1dr0",
     "tags": ["docker", "contenedores", "devops", "tutorial"],
     "category": "Articulo",
-    "image": "images/pic01.jpg",
+    "image": "images/docker.svg",
     "excerpt": "Tutorial sobre volúmenes y puertos en Docker"
   },
   {
@@ -81,7 +81,7 @@
     "author": "h1dr0",
     "tags": ["podman", "docker", "contenedores", "devops", "tutorial"],
     "category": "Articulo",
-    "image": "images/pic02.jpg",
+    "image": "images/podman.svg",
     "excerpt": "Introducción a Podman como alternativa a Docker"
   }
 ]

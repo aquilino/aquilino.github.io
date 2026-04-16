@@ -294,15 +294,18 @@ border-top: 1px solid var(--border);
 }
 
 .pagination-btn {
-padding: 0.5em 1em;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.6em 1.2em;
 border: 1px solid var(--border);
 border-radius: 4px;
 background: var(--bg-secondary);
 color: var(--text-primary);
 cursor: pointer;
-font-size: 0.85em;
+font-size: 0.9em;
 transition: all 0.2s;
-text-align: center;
+min-width: 100px;
 }
 
 .pagination-btn:hover:not(:disabled) {
