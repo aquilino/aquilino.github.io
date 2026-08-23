@@ -7,8 +7,7 @@ category: CTF
 difficulty: Facil
 ---
 
-OCLAT
-=====
+----------------------------------
 
 ![](../images/reto1/JTVCcKk.jpg)
 
