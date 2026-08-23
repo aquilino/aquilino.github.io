@@ -6,8 +6,6 @@ tags: [tips, tech, devops, tutorial, pentesting]
 category: Articulo
 ---
 
-# Apuntes
-
 ## ESCALADA DE PRIVILEGIOS
 
 ### Información del sistema
