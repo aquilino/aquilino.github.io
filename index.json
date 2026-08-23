@@ -109,6 +109,7 @@
     "author": "h1dr0",
     "tags": ["podman", "quadlets", "systemd", "contenedores", "qctl", "devops", "atareao"],
     "category": "Articulo",
+    "image": "images/podman.svg",
     "excerpt": "Aprende qué son los Podman quadlets y cómo gestionarlos con qctl: instala, arranca y monitoriza tus contenedores como servicios systemd de forma sencilla."
   }
 ]
