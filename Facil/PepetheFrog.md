@@ -7,8 +7,7 @@ category: CTF
 difficulty: Facil
 ---
 
-PEPE THE FROG
-=============
+----------------------------------
 
 ![](../images/reto2/reto2.jpg)
 
