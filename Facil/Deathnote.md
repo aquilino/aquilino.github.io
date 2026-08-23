@@ -7,9 +7,6 @@ category: CTF
 difficulty: Facil
 ---
 
-DEATHNOTE
-=========
-
 ![](../images/reto5/reto5.jpg)
 
 Enumeración de servicios y puertos
