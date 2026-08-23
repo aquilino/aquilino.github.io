@@ -4,7 +4,10 @@
     "title": "Whoami",
     "date": "2024-04-15",
     "author": "h1dr0",
-    "tags": ["about", "personal"],
+    "tags": [
+      "about",
+      "personal"
+    ],
     "category": "About",
     "image": "images/about.jpg",
     "excerpt": "Información sobre h1dr0 y este sitio web"
@@ -14,7 +17,12 @@
     "title": "OCLAT",
     "date": "2024-01-15",
     "author": "h1dr0",
-    "tags": ["ctf", "ftp", "nmap", "facil"],
+    "tags": [
+      "ctf",
+      "ftp",
+      "nmap",
+      "facil"
+    ],
     "category": "CTF",
     "difficulty": "Facil",
     "image": "images/reto1/JTVCcKk.jpg",
@@ -25,7 +33,13 @@
     "title": "PEPE THE FROG",
     "date": "2024-01-20",
     "author": "h1dr0",
-    "tags": ["ctf", "ssh", "nmap", "steganography", "facil"],
+    "tags": [
+      "ctf",
+      "ssh",
+      "nmap",
+      "steganography",
+      "facil"
+    ],
     "category": "CTF",
     "difficulty": "Facil",
     "image": "images/reto2/reto2.jpg",
@@ -36,7 +50,13 @@
     "title": "Fake News",
     "date": "2024-02-01",
     "author": "h1dr0",
-    "tags": ["ctf", "drupal", "nmap", "reverse-shell", "facil"],
+    "tags": [
+      "ctf",
+      "drupal",
+      "nmap",
+      "reverse-shell",
+      "facil"
+    ],
     "category": "CTF",
     "difficulty": "Facil",
     "image": "images/reto3/reto3.jpg",
@@ -47,7 +67,13 @@
     "title": "CRYPTOCORP",
     "date": "2024-02-08",
     "author": "h1dr0",
-    "tags": ["ctf", "criptografia", "cyberchef", "steganography", "facil"],
+    "tags": [
+      "ctf",
+      "criptografia",
+      "cyberchef",
+      "steganography",
+      "facil"
+    ],
     "category": "CTF",
     "difficulty": "Facil",
     "image": "images/reto4/reto4.jpg",
@@ -58,7 +84,14 @@
     "title": "DEATHNOTE",
     "date": "2024-02-15",
     "author": "h1dr0",
-    "tags": ["ctf", "wordpress", "hydra", "nmap", "reverse-shell", "facil"],
+    "tags": [
+      "ctf",
+      "wordpress",
+      "hydra",
+      "nmap",
+      "reverse-shell",
+      "facil"
+    ],
     "category": "CTF",
     "difficulty": "Facil",
     "image": "images/reto5/reto5.jpg",
@@ -69,7 +102,12 @@
     "title": "Docker Volúmenes y Puertos",
     "date": "2024-03-01",
     "author": "h1dr0",
-    "tags": ["docker", "contenedores", "devops", "tutorial"],
+    "tags": [
+      "docker",
+      "contenedores",
+      "devops",
+      "tutorial"
+    ],
     "category": "Articulo",
     "image": "images/docker.svg",
     "excerpt": "Tutorial sobre volúmenes y puertos en Docker"
@@ -79,7 +117,13 @@
     "title": "Podman: una alternativa a Docker",
     "date": "2024-03-10",
     "author": "h1dr0",
-    "tags": ["podman", "docker", "contenedores", "devops", "tutorial"],
+    "tags": [
+      "podman",
+      "docker",
+      "contenedores",
+      "devops",
+      "tutorial"
+    ],
     "category": "Articulo",
     "image": "images/podman.svg",
     "excerpt": "Introducción a Podman como alternativa a Docker"
@@ -89,7 +133,11 @@
     "title": "Apuntes pentesting",
     "date": "2026-04-16",
     "author": "h1dr0",
-    "tags": ["pentesting", "privilege-escalation", "tutorial"],
+    "tags": [
+      "pentesting",
+      "privilege-escalation",
+      "tutorial"
+    ],
     "category": "Articulo",
     "excerpt": "Apuntes de pentesting: escalada de privilegios, enumeración y más"
   },
@@ -98,16 +146,33 @@
     "title": "Cómo la inteligencia artificial está cambiando la educación en 2026",
     "date": "2026-08-23",
     "author": "h1dr0",
-    "tags": ["inteligencia artificial", "educación", "IA en educación", "transformación digital", "tutores virtuales", "personalización del aprendizaje", "edtech"],
+    "tags": [
+      "inteligencia artificial",
+      "educación",
+      "IA en educación",
+      "transformación digital",
+      "tutores virtuales",
+      "personalización del aprendizaje",
+      "edtech"
+    ],
     "category": "Articulo",
-    "excerpt": "La IA en educación 2026 ya transforma el aula con tutores 24/7, adopción masiva y personalización pedagógica. Conoce datos y retos."
+    "excerpt": "La IA en educación 2026 ya transforma el aula con tutores 24/7, adopción masiva y personalización pedagógica. Conoce datos y retos.",
+    "image": "images/ia-educacion-2.jpg"
   },
   {
     "file": "Articulos/PodmanQuadlets.md",
     "title": "Podman y los quadlets: gestiona contenedores con systemd y qctl",
     "date": "2026-08-23",
     "author": "h1dr0",
-    "tags": ["podman", "quadlets", "systemd", "contenedores", "qctl", "devops", "atareao"],
+    "tags": [
+      "podman",
+      "quadlets",
+      "systemd",
+      "contenedores",
+      "qctl",
+      "devops",
+      "atareao"
+    ],
     "category": "Articulo",
     "image": "images/podman.svg",
     "excerpt": "Aprende qué son los Podman quadlets y cómo gestionarlos con qctl: instala, arranca y monitoriza tus contenedores como servicios systemd de forma sencilla."
@@ -117,8 +182,18 @@
     "title": "Cómo la inteligencia artificial está cambiando la educación en 2026 (II parte)",
     "date": "2026-08-23",
     "author": "h1dr0",
-    "tags": ["IA", "educación", "2026", "tecnología educativa", "evaluación", "regulación", "aprendizaje", "docencia"],
+    "tags": [
+      "IA",
+      "educación",
+      "2026",
+      "tecnología educativa",
+      "evaluación",
+      "regulación",
+      "aprendizaje",
+      "docencia"
+    ],
     "category": "Articulo",
-    "excerpt": "Descubre cómo la inteligencia artificial está revolucionando la educación en 2026: uso docente, regulación UE de alto riesgo y alfabetización en IA."
+    "excerpt": "Descubre cómo la inteligencia artificial está revolucionando la educación en 2026: uso docente, regulación UE de alto riesgo y alfabetización en IA.",
+    "image": "images/ia-educacion-1.jpg"
   }
 ]

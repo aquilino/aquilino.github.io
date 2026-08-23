@@ -23,3 +23,7 @@ Si todavía piensas en la inteligencia artificial como algo que "llegará dentro
 ## Hacia dónde vamos
 
 La tecnología avanza, pero no para todos por igual: 2.600 millones de personas aún no tienen internet (UNESCO, 2025). Si de verdad queremos que la IA transforme la educación, el reto no es inventar más herramientas, sino garantizar que lleguen a quienes hoy solo pueden mirar por la ventana. Por eso, formar al profesorado y extender la conectividad son el verdadero punto de partida, no el final del camino. El futuro del aula será brillante solo si es, también, equitativo.
+
+---
+
+📎 **Continúa en la [II parte: Cómo la inteligencia artificial está cambiando la educación en 2026 (II parte)](https://aquilino.github.io/?md=Articulos/ia-educacion-2026-parte-2.md).**

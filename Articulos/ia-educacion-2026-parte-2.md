@@ -33,3 +33,7 @@ El informe *EDUCAUSE 2026* señala que la mayoría del profesorado y también de
 La OECD propone un cambio de enfoque: construir herramientas educativas **junto al profesorado**, para que mantenga su *agencia* y supervisión, en lugar de automatizar la enseñanza (Fuente: OECD).
 
 El mensaje es sencillo: la IA suma cuando potencia al docente, no cuando lo sustituye. En la práctica, eso implica formar al claustro antes de comprar licencias: una buena política empieza por preguntar qué tarea repetitiva queremos delegar para volver a mirar a los ojos de nuestro alumnado y recuperar el trato cercano que ningún algoritmo da.
+
+---
+
+📎 **Lee primero la [I parte: Cómo la inteligencia artificial está cambiando la educación en 2026](https://aquilino.github.io/?md=Articulos/IaEducacion2026.md).**
