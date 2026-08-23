@@ -1,5 +1,4 @@
 ---
-title: "Cómo la inteligencia artificial está cambiando la educación en 2026"
 date: 2026-08-23
 author: h1dr0
 tags: [inteligencia artificial, educación, IA en educación, transformación digital, tutores virtuales, personalización del aprendizaje, edtech]
