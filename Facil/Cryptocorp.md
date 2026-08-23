@@ -7,9 +7,6 @@ category: CTF
 difficulty: Facil
 ---
 
-CRYPTOCORP
-==========
-
 ![](../images/reto4/reto4.jpg)
 
 Enumeración de servicios y puertos
