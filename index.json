@@ -101,5 +101,14 @@
     "tags": ["inteligencia artificial", "educación", "IA en educación", "transformación digital", "tutores virtuales", "personalización del aprendizaje", "edtech"],
     "category": "Articulo",
     "excerpt": "La IA en educación 2026 ya transforma el aula con tutores 24/7, adopción masiva y personalización pedagógica. Conoce datos y retos."
+  },
+  {
+    "file": "Articulos/PodmanQuadlets.md",
+    "title": "Podman y los quadlets: gestiona contenedores con systemd y qctl",
+    "date": "2026-08-23",
+    "author": "h1dr0",
+    "tags": ["podman", "quadlets", "systemd", "contenedores", "qctl", "devops", "atareao"],
+    "category": "Articulo",
+    "excerpt": "Aprende qué son los Podman quadlets y cómo gestionarlos con qctl: instala, arranca y monitoriza tus contenedores como servicios systemd de forma sencilla."
   }
 ]
