@@ -6,8 +6,6 @@ tags: [podman, docker, contenedores, devops, tutorial]
 category: Articulo
 ---
 
-# Podman: una herramienta de contenedores alternativa a Docker
-
 Podman es una herramienta de contenedores de código abierto que se utiliza para crear, ejecutar y administrar contenedores de Linux. Es una alternativa a Docker, que es una de las herramientas de contenedores más populares. Podman se ejecuta como un demonio sin necesidad de un servidor centralizado, lo que lo hace más seguro y fácil de usar. Además, Podman es compatible con la mayoría de las imágenes de Docker, lo que significa que los usuarios pueden utilizar las imágenes de Docker existentes sin tener que hacer ningún cambio.
 
 ## Instalación de Podman
