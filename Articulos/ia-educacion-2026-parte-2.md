@@ -4,7 +4,7 @@ date: 2026-08-23
 author: h1dr0
 tags: [IA, educación, 2026, tecnología educativa, evaluación, regulación, aprendizaje, docencia]
 keywords: [inteligencia artificial, educación, IA, tecnología educativa, evaluación, regulación, aprendizaje, docencia]
-description: Descubre cómo la inteligencia artificial está revolucionando la educación en 2026: uso docente, regulación UE de alto riesgo y alfabetización en IA.
+description: "Descubre cómo la inteligencia artificial está revolucionando la educación en 2026: uso docente, regulación UE de alto riesgo y alfabetización en IA."
 category: Articulo
 ---
 
