@@ -7,8 +7,6 @@ category: CTF
 difficulty: Facil
 ---
 
-=========
-
 ![](../images/reto3/reto3.jpg)
 
 Enumeracion de servicios y puertos
