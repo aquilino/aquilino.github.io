@@ -5,8 +5,7 @@ author: h1dr0
 tags: [about, personal]
 category: About
 ---
-
-# Whoami
+----------------------------------
 
 ## h1dr0
 
