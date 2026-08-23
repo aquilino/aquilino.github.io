@@ -6,9 +6,6 @@ tags: [docker, contenedores, devops, tutorial]
 category: Articulo
 ---
 
-Docker Volúmenes y Puertos
-==========================
-
 Docker es una herramienta popular para el desarrollo y la implementación de aplicaciones en contenedores. Los contenedores proporcionan un entorno aislado para cada aplicación, lo que permite una mayor portabilidad y escalabilidad. En este artículo, hablaremos sobre dos conceptos clave de Docker: Volúmenes y Puertos.
 
 Volúmenes
