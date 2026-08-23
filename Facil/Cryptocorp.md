@@ -6,6 +6,7 @@ tags: [ctf, criptografia, cyberchef, steganography, facil]
 category: CTF
 difficulty: Facil
 ---
+----------------------------------
 
 ![](../images/reto4/reto4.jpg)
 
