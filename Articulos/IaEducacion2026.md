@@ -15,13 +15,13 @@ Si todavía piensas en la inteligencia artificial como algo que "llegará dentro
 
 **Tutores que nunca duermen.** Los asistentes de IA resolvieron el 99,4 % de las dudas en 191.283 sesiones registradas, y lo más curioso: el 52 % de esas consultas ocurrió fuera del horario escolar (LearnWise, 2026). Es decir, los estudiantes estudian cuando quieren, no cuando el reloj les obliga.
 
-![Estudiante usando un tutor virtual de IA en su ordenador.](../images/ia-educacion-1.jpg)
+![Estudiante concentrada siguiendo clases en línea y estudiando con un portátil sobre una mesa.](../images/ia-educacion-parte1-1.jpg)
 
 **Adopción masiva, pero desigual.** El 88 % de los estudiantes y el 77 % del profesorado ya utiliza IA. Sin embargo, solo el 29 % cree que el profesorado está realmente preparado para esto (Digital Education Council, 2026). El entusiasmo corre más rápido que la formación, y ahí hay un problema serio. Ese hueco entre uso y preparación es justo donde se juega la credibilidad de la IA en las aulas.
 
 **Personalización con propósito pedagógico.** En un experimento, quienes usaron una versión con tutor subieron su rendimiento un 127 %, frente al 48 % del grupo estándar; pero al retirar el acceso, cayó un 17 % (OECD, 2026). La IA potencia, sí, pero no sustituye el hábito de aprender.
 
-![Profesorado y alumnado colaborando con herramientas de IA en el aula.](../images/ia-educacion-2.jpg)
+![Dos estudiantes usando un portátil junto a sus compañeros de clase en un aula con tecnología.](../images/ia-educacion-parte1-2.jpg)
 
 ## Hacia dónde vamos
 
